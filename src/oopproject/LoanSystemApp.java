@@ -16,7 +16,8 @@ public class LoanSystemApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Loan: ");
+        System.out.println(" << WELCOME TO LOAN APPLICATION SYSTEM >> ");
+        System.out.println("");
     }
     
 }

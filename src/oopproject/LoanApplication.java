@@ -9,15 +9,6 @@ package oopproject;
  *
  * @author USER
  */
-public class User {
-    private String name; 
-    private int phoneNumber; 
-    private String username; 
-    private int ic; 
-    private String email; 
-    private String address; 
+public class LoanApplication {
     
-    public User(){
-        
-    }
 }
