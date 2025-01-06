@@ -26,4 +26,5 @@ public class Applicant {
         this.DoB = DoB;
     }
     
+    
 }
