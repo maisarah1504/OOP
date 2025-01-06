@@ -10,5 +10,7 @@ package oopproject;
  * @author USER
  */
 public class LoanApplication {
+    Applicant applicant;
+    Loan loan;
     
 }
