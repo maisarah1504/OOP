@@ -9,6 +9,18 @@ package oopproject;
  *
  * @author USER
  */
-public class Loan {
+public abstract class Loan {
+    protected String loanID;
+    protected double interestRate;
+    protected double amount;
+    protected int loanTerm;
     
+    public Loan(String loanID, double interestRate, double amount, int loanTerm){
+        this.loanID = loanID;
+        this.interestRate = interestRate;
+        this.amount = amount;
+        this.loanTerm = loanTerm;
+    }
+    
+    public abstract double calculateMonthlyPayment();
 }

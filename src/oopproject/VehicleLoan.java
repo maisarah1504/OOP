@@ -12,7 +12,7 @@ package oopproject;
 public class VehicleLoan extends Loan{
     private String vehicleType, vehicleModel;
     
-    public VehicleLoan(String loadID, double amount, double interestRate, int loanTerm, String vehicleType, String vehicleModel){
+    public VehicleLoan(String loanID, double amount, double interestRate, int loanTerm, String vehicleType, String vehicleModel){
         super(loanID, amount, interestRate, loanTerm);
         this.vehicleType = vehicleType;
         this.vehicleModel = vehicleModel;
@@ -21,6 +21,11 @@ public class VehicleLoan extends Loan{
     public void displayVehicleDetails(){
         System.out.println(" Vehicle Type: " + vehicleType);
         System.out.println(" Vehicle Model: " + vehicleModel);
+    }
+    
+    public double calculateMonthlyPayment(){
+        double monthlyRate = interestRate / 12 /100;
+        return (amount * monthlyRate)/(1- Math.pow(1 + monthlyRate, -loanTerm));
     }
     
     public String getVehicleType(){

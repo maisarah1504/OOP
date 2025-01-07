@@ -18,7 +18,7 @@ public class Applicant {
     private String phoneNumber; 
     private String address; 
     private String DoB;
-    private List<VehicleLoan> vehicleLoan;
+    private List<Loan> loans;
     
     public Applicant(){
         this.id = id; 
@@ -27,11 +27,11 @@ public class Applicant {
         this.address = address; 
         this.phoneNumber = phoneNumber; 
         this.DoB = DoB;
-        this.vehicleLoan = new ArrayList<>();
+        this.loans = new ArrayList<>();
     }
     
-    public void addVehicleLoan(VehicleLoan vehicleLoan){
-        vehicleLoan.add(vehicleLoan);
+    public void addVehicleLoan(Loan loan){
+        loans.add(loan);
     }
     
     public String getID(){
