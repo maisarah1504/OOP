@@ -8,8 +8,24 @@ package oopproject;
  *
  * @author USER
  */
-public class PersonalLoan {
+class PersonalLoan {
     public String loanPurpose;
     public double loanPackage;
     public int duration;
+    
+    public PersonalLoan (String loanPurpose, double loanPackage, int duration) {
+    this.loanPurpose = loanPurpose;
+    this.loanPackage = loanPackage;
+    this.duration = duration;
+    }
+    
+    public void displayLoanDetails(){
+    System.out.println("Loan Purpose: " + loanPurpose);
+    System.out.println("Loan Pacakge: RM" + String.format("%,.2f", loanPackage));
+    System.out.println("Duration to Payback: " + duration + " years");
+    }
 }
+
+
+
+
