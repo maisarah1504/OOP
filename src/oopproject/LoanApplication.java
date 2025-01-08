@@ -148,7 +148,7 @@ public class LoanApplication {
             
           
             // Manage loans for the applicant
-            manageLoans(applicants);
+            manageLoans(applicant);
         }
 
         scanner.close();
