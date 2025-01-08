@@ -29,7 +29,7 @@ class PersonalLoan {
         return loanPurpose;
     }
     
-    public void setLoanPurpose(String laonPurpose) {
+    public void setLoanPurpose(String loanPurpose) {
         this.loanPurpose = loanPurpose;
     }
     
@@ -37,7 +37,7 @@ class PersonalLoan {
         return loanPackage;
     }
     
-    public void setLoanPackage (double LoanPackage) {
+    public void setLoanPackage (double loanPackage) {
         this.loanPackage = loanPackage;
     }
     
