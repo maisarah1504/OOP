@@ -29,13 +29,15 @@ public class LoanApplication {
         return newApplicant;
     }
     
-    public Applicant FindApplicant(String applicantId, String name){
-        if (Applicant findApplicant : applicants){
+    public Applicant FindApplicant(String applicantId, String name) {
+        for (Applicant applicant : applicants) {
             if (applicant.getID().equals(applicantId)) {
-                    return findApplicant;
+                return applicant;
             }
         }
+        return null; // Return null if the applicant is not found
     }
+
 
     // Method to manage loans for an applicant
     public void manageLoans(Applicant applicant) {
@@ -58,7 +60,7 @@ public class LoanApplication {
                 case 1:
                     // View existing loans
                     System.out.println("\n--- Existing Loans ---");
-                    if (applicant.getLoans().isEmpty()) {
+                    if (applicant.getLoan().isEmpty()) {
                         System.out.println("No loans found for this applicant.");
                     } else {
                         applicant.displayApplicantDetails();
@@ -90,10 +92,10 @@ public class LoanApplication {
                     } else {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
-                        newLoan = new PersonalLoan(loanId, amount, interestRate, loanTerm, purpose);
+                        //newLoan = new PersonalLoan(amount, interestRate, loanTerm, purpose);
                     }
 
-                    applicant.addLoan(newLoan);
+                    //applicant.addLoan(newLoan);
                     System.out.println("Loan added successfully!");
                     break;
 
@@ -116,12 +118,14 @@ public class LoanApplication {
             int option = scanner.nextInt();
             scanner.nextLine(); // Consume newline
             
+            Applicant applicant = null; 
+            
             if (option == 1){
                 System.out.println("Enter ID: ");
                 String applicantId = scanner.nextLine();
                 System.out.print("Enter Name: ");
                 String name = scanner.nextLine();
-                Applicant applicant = FindApplicant(applicantId, name);
+                applicant = FindApplicant(applicantId, name);
                 System.out.println("Applicant ID: " + applicant.getID() + " found or created.");
             }
             if (option == 2){
@@ -138,7 +142,7 @@ public class LoanApplication {
                 System.out.println("Enter Date of Birth: ");
                 String dob = scanner.nextLine();
                 
-                Applicant applicant = CreateApplicant(applicantId, name, email, phoneNumber, address, dob);
+                applicant = CreateApplicant(applicantId, name, email, phoneNumber, address, dob);
                 System.out.println("Applicant ID: " + applicant.getID() + " found or created.");
             }
             if (option == 3) {
