@@ -54,8 +54,12 @@ public class Applicant {
         return email;
     }
     
-    public void setEmail(String email){
-        this.email = email;
+    public void setEmail(String email) {
+        if (email.contains("@")) {
+            this.email = email;
+        } else {
+            System.out.println("Invalid email format.");
+        }
     }
     
     public String getPhoneNumber(){
