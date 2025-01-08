@@ -13,10 +13,11 @@ public class PersonalLoan extends Loan{
     public double loanPackage;
     public int duration;
     
-    public PersonalLoan (String loanPurpose, double loanPackage, int duration) {
-    this.loanPurpose = loanPurpose;
-    this.loanPackage = loanPackage;
-    this.duration = duration;
+    public PersonalLoan (String loanID, double amount, double interestRate, int loanTerm, String loanPurpose, double loanPackage, int duration) {
+        super(loanID, amount, interestRate, loanTerm);
+        this.loanPurpose = loanPurpose;
+        this.loanPackage = loanPackage;
+        this.duration = duration;
     }
     
     public void displayLoanDetails(){
