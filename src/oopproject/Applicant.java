@@ -81,7 +81,5 @@ public class Applicant {
     public void setDOB(String DoB){
         this.DoB = DoB;
     }
-    
-    public void newApplicant(){}
-    
+        
 }
