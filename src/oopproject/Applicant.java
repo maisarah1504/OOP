@@ -81,5 +81,30 @@ public class Applicant {
     public void setDOB(String DoB){
         this.DoB = DoB;
     }
-        
+    
+    public List<Loan> getLoan(){
+        return loans;
+    }
+    
+    public void addLoan(Loan loan){
+        loans.add(loan);
+    }
+    
+    public void displayApplicantDetails() {
+        System.out.println("Applicant ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Address: " + address);
+        System.out.println("Date of Birth: " + DoB);
+        System.out.println("--- Loans ---");
+        if (loans.isEmpty()) {
+            System.out.println("No loans available.");
+        } else {
+            for (Loan loan : loans) {
+                System.out.println(loan.toString());
+            }
+        }
+    }
+    
 }

@@ -8,7 +8,7 @@ package oopproject;
  *
  * @author USER
  */
-class PersonalLoan {
+public class PersonalLoan extends Loan{
     public String loanPurpose;
     public double loanPackage;
     public int duration;
@@ -47,6 +47,11 @@ class PersonalLoan {
     
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+    
+    @Override
+    public double calculateMonthlyPayment(){
+        return 0;
     }
 }
 
