@@ -20,7 +20,7 @@ public class Applicant {
     private String DoB;
     private List<Loan> loans;
     
-    public Applicant(){
+    public Applicant(String id, String name, String email, String phoneNumber, String address, String DoB){
         this.id = id; 
         this.name = name; 
         this.email = email; 
@@ -82,5 +82,6 @@ public class Applicant {
         this.DoB = DoB;
     }
     
+    public void newApplicant(){}
     
 }

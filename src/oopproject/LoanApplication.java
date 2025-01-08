@@ -21,17 +21,20 @@ public class LoanApplication {
     }
 
     // Method to check if an applicant exists
-    public Applicant findOrCreateApplicant(String applicantId, String name, int creditScore) {
-        for (Applicant applicant : applicants) {
-            if (applicant.getID().equals(applicantId)) {
-                return applicant; // Return existing applicant
-            }
-        }
-
+    public Applicant CreateApplicant(String applicantId, String name, String email, String phoneNumber, String address, String dob) {
+    
         // If not found, create a new applicant
-        Applicant newApplicant = new Applicant(ID, name, creditScore);
+        Applicant newApplicant = new Applicant(applicantId, name, email, phoneNumber, address, dob);
         applicants.add(newApplicant);
         return newApplicant;
+    }
+    
+    public Applicant FindApplicant(String applicantId, String name){
+        if (Applicant findApplicant : applicants){
+            if (applicant.getID().equals(applicantId)) {
+                    return findApplicant;
+            }
+        }
     }
 
     // Method to manage loans for an applicant
@@ -106,30 +109,44 @@ public class LoanApplication {
 
         while (true) {
             System.out.println("\n--- Loan Management System ---");
-            System.out.println("1. Check Applicant");
-            System.out.println("2. Exit");
+            System.out.println("1. Sign In");
+            System.out.println("2. Sign Up");
+            System.out.println("3. Exit");
             System.out.print("Choose an option: ");
             int option = scanner.nextInt();
             scanner.nextLine(); // Consume newline
-
-            if (option == 2) {
+            
+            if (option == 1){
+                System.out.println("Enter ID: ");
+                String applicantId = scanner.nextLine();
+                System.out.print("Enter Name: ");
+                String name = scanner.nextLine();
+                Applicant applicant = FindApplicant(applicantId, name);
+                System.out.println("Applicant ID: " + applicant.getID() + " found or created.");
+            }
+            if (option == 2){
+                System.out.print("Enter ID: ");
+                String applicantId = scanner.nextLine();
+                System.out.print("Enter Name: ");
+                String name = scanner.nextLine();
+                System.out.print("Enter Email: ");
+                String email = scanner.nextLine();
+                System.out.println("Enter Phone Number: ");
+                String phoneNumber = scanner.nextLine();
+                System.out.println("Enter Address: ");
+                String address = scanner.nextLine();
+                System.out.println("Enter Date of Birth: ");
+                String dob = scanner.nextLine();
+                
+                Applicant applicant = CreateApplicant(applicantId, name, email, phoneNumber, address, dob);
+                System.out.println("Applicant ID: " + applicant.getID() + " found or created.");
+            }
+            if (option == 3) {
                 System.out.println("Exiting the system...");
                 break;
             }
-
-            System.out.print("Enter Applicant ID: ");
-            String applicantId = scanner.nextLine();
-
-            // Check if the applicant exists
-            System.out.print("Enter Applicant Name (if new): ");
-            String name = scanner.nextLine();
-            System.out.print("Enter Credit Score (if new): ");
-            int creditScore = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-
-            Applicant applicant = findOrCreateApplicant(applicantId, name);
-            System.out.println("Applicant ID: " + applicant.getID() + " found or created.");
-
+            
+          
             // Manage loans for the applicant
             manageLoans(applicant);
         }
