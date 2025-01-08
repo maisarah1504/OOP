@@ -74,8 +74,6 @@ public class LoanApplication {
                     String loanId = scanner.nextLine();
                     System.out.print("Enter Loan Amount: ");
                     double amount = scanner.nextDouble();
-                    System.out.print("Enter Interest Rate (%): ");
-                    double interestRate = scanner.nextDouble();
                     System.out.print("Enter Loan Term (in months): ");
                     int loanTerm = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
