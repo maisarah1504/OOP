@@ -14,12 +14,11 @@ public class PersonalLoan extends Loan {
     private double repayment;
 
     public PersonalLoan(String loanID, double amount, double interestRate, int loanTerm, String loanPurpose) {
-        super(loanID, interestRate, amount, loanTerm);
+        super(loanID, amount, loanTerm);
         this.loanPurpose = loanPurpose;
         this.repayment = calculateMonthlyPayment();  // Set repayment during initialization
     }
 
-    // Getter and Setter for loanPurpose
     public String getLoanPurpose() {
         return loanPurpose;
     }

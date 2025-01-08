@@ -13,7 +13,7 @@ public class VehicleLoan extends Loan{
     private String vehicleType, vehicleModel;
     
     public VehicleLoan(String loanID, double amount, double interestRate, int loanTerm, String vehicleType, String vehicleModel){
-        super(loanID, amount, interestRate, loanTerm);
+        super(loanID, amount, loanTerm);
         this.vehicleType = vehicleType;
         this.vehicleModel = vehicleModel;
     }

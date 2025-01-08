@@ -29,8 +29,8 @@ public class Applicant {
         this.DoB = DoB;
         this.loans = new ArrayList<>();
     }
-    
-    public void addVehicleLoan(Loan loan){
+
+    public void addLoan(Loan loan){
         loans.add(loan);
     }
     
@@ -82,16 +82,12 @@ public class Applicant {
         return DoB;
     }
     
-    public void setDOB(String DoB){
+    public void setDoB(String DoB){
         this.DoB = DoB;
     }
     
     public List<Loan> getLoan(){
         return loans;
-    }
-    
-    public void addLoan(Loan loan){
-        loans.add(loan);
     }
     
     public void displayApplicantDetails() {
@@ -110,5 +106,4 @@ public class Applicant {
             }
         }
     }
-    
 }
