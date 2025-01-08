@@ -8,16 +8,15 @@ package oopproject;
  *
  * @author USER
  */
-public class PersonalLoan extends Loan{
+class PersonalLoan {
     public String loanPurpose;
     public double loanPackage;
     public int duration;
     
-    public PersonalLoan (String loanID, double amount, double interestRate, int loanTerm, String loanPurpose, double loanPackage, int duration) {
-        super(loanID, amount, interestRate, loanTerm);
-        this.loanPurpose = loanPurpose;
-        this.loanPackage = loanPackage;
-        this.duration = duration;
+    public PersonalLoan (String loanPurpose, double loanPackage, int duration) {
+    this.loanPurpose = loanPurpose;
+    this.loanPackage = loanPackage;
+    this.duration = duration;
     }
     
     public void displayLoanDetails(){
@@ -30,7 +29,7 @@ public class PersonalLoan extends Loan{
         return loanPurpose;
     }
     
-    public void setLoanPurpose(String laonPurpose) {
+    public void setLoanPurpose(String loanPurpose) {
         this.loanPurpose = loanPurpose;
     }
     
@@ -38,7 +37,7 @@ public class PersonalLoan extends Loan{
         return loanPackage;
     }
     
-    public void setLoanPackage (double LoanPackage) {
+    public void setLoanPackage (double loanPackage) {
         this.loanPackage = loanPackage;
     }
     
@@ -49,13 +48,4 @@ public class PersonalLoan extends Loan{
     public void setDuration(int duration) {
         this.duration = duration;
     }
-    
-    @Override
-    public double calculateMonthlyPayment(){
-        return 0;
-    }
 }
-
-
-
-
