@@ -74,7 +74,7 @@ public class LoanApplication {
                     System.out.print("Enter Loan Term (in months): ");
                     int loanTerm = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
-                    System.out.print("Enter Loan Type (Vehicle/Personal): ");
+                    System.out.print("Enter Loan Type (Vehicle/Personal/Study): ");
                     String loanType = scanner.nextLine();
 
                     Loan newLoan = null;
@@ -88,6 +88,12 @@ public class LoanApplication {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
                         newLoan = new PersonalLoan(loanId, amount, interestRate, loanTerm, purpose);
+                    }else if (loanType.equalsIgnoreCase("Study")) {
+                        System.out.print("Enter University Name: ");
+                        String universityName = scanner.nextLine();
+                        System.out.print("Enter Program of Study: ");
+                        String programOfStudy = scanner.nextLine();
+                        newLoan = new StudyLoan(loanId, amount, loanTerm, universityName, programOfStudy);
                     }
 
                     if (newLoan != null) {
