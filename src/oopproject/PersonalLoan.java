@@ -24,6 +24,30 @@ class PersonalLoan {
     System.out.println("Loan Pacakge: RM" + String.format("%,.2f", loanPackage));
     System.out.println("Duration to Payback: " + duration + " years");
     }
+    
+    public String getLoanPurpose() {
+        return loanPurpose;
+    }
+    
+    public void setLoanPurpose(String laonPurpose) {
+        this.loanPurpose = loanPurpose;
+    }
+    
+    public double getLoanPackage() {
+        return loanPackage;
+    }
+    
+    public void setLoanPackage (double LoanPackage) {
+        this.loanPackage = loanPackage;
+    }
+    
+    public int getDuration(int duration) {
+        return duration;
+    }
+    
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 }
 
 
