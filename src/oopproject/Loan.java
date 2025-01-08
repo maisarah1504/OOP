@@ -25,6 +25,14 @@ public abstract class Loan {
         return interestRate;
     }
     
+    @Override
+    public String toString() {
+        return "Loan ID: " + loanID +
+               "\nLoan Amount: " + amount +
+               "\nInterest Rate: " + interestRate + "%" +
+               "\nLoan Term: " + loanTerm + " months";
+    }
+    
     public abstract double calculateMonthlyPayment();
     
 }
