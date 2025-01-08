@@ -8,44 +8,35 @@ package oopproject;
  *
  * @author USER
  */
-class PersonalLoan {
-    public String loanPurpose;
-    public double loanPackage;
-    public int duration;
-    
-    public PersonalLoan (String loanPurpose, double loanPackage, int duration) {
-    this.loanPurpose = loanPurpose;
-    this.loanPackage = loanPackage;
-    this.duration = duration;
+
+public class PersonalLoan extends Loan {
+    private String loanPurpose; // Purpose of the loan (e.g., home renovation, vacation, medical)
+    private double repayment;
+
+    public PersonalLoan(String loanID, double amount, double interestRate, int loanTerm, String loanPurpose) {
+        super(loanID, interestRate, amount, loanTerm);
+        this.loanPurpose = loanPurpose;
+        this.repayment = calculateMonthlyPayment();  // Set repayment during initialization
     }
-    
-    public void displayLoanDetails(){
-    System.out.println("Loan Purpose: " + loanPurpose);
-    System.out.println("Loan Pacakge: RM" + String.format("%,.2f", loanPackage));
-    System.out.println("Duration to Payback: " + duration + " years");
-    }
-    
+
+    // Getter and Setter for loanPurpose
     public String getLoanPurpose() {
         return loanPurpose;
     }
-    
+
     public void setLoanPurpose(String loanPurpose) {
         this.loanPurpose = loanPurpose;
     }
-    
-    public double getLoanPackage() {
-        return loanPackage;
+
+    @Override
+    public double calculateMonthlyPayment() {
+        double monthlyRate = interestRate / 12 / 100;
+        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
     }
-    
-    public void setLoanPackage (double loanPackage) {
-        this.loanPackage = loanPackage;
-    }
-    
-    public int getDuration(int duration) {
-        return duration;
-    }
-    
-    public void setDuration(int duration) {
-        this.duration = duration;
+
+    @Override
+    public String toString() {
+        return super.toString() +
+               "\nLoan Purpose: " + loanPurpose;
     }
 }

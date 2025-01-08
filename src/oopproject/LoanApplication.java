@@ -89,6 +89,10 @@ public class LoanApplication {
                         System.out.print("Enter Vehicle Model: ");
                         String vehicleModel = scanner.nextLine();
                         newLoan = new VehicleLoan(loanId, amount, interestRate, loanTerm, vehicleType, vehicleModel);
+                    } else if (loanType.equalsIgnoreCase("Personal")) {
+                        System.out.print("Enter Loan Purpose: ");
+                        String purpose = scanner.nextLine();
+                        newLoan = new PersonalLoan(loanId, amount, interestRate, loanTerm, purpose);
                     } else {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
