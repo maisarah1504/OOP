@@ -22,7 +22,6 @@ public class LoanApplication {
     }
 
     public Applicant createApplicant(String applicantId, String name, String email, String phoneNumber, String address, String dob) {
-        
         Applicant newApplicant = new Applicant(applicantId, name, email, phoneNumber, address, dob);
         applicants.add(newApplicant);
         return newApplicant;

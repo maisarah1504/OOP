@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package oopproject;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  *
@@ -18,7 +17,7 @@ public class Applicant {
     private String phoneNumber; 
     private String address; 
     private String DoB;
-    private List<Loan> loans;
+    private Loan loans;
     
     public Applicant(String id, String name, String email, String phoneNumber, String address, String DoB){
         this.id = id; 
@@ -27,11 +26,11 @@ public class Applicant {
         this.address = address; 
         this.phoneNumber = phoneNumber; 
         this.DoB = DoB;
-        this.loans = new ArrayList<>();
+        this.loans = new Loan();
     }
 
     public void addLoan(Loan loan){
-        loans.add(loan);
+        
     }
     
     public String getID(){
@@ -100,7 +99,8 @@ public class Applicant {
         System.out.println("--- Loans ---");
         if (loans.isEmpty()) {
             System.out.println("No loans available.");
-        } else {
+        } 
+        else {
             for (Loan loan : loans) {
                 System.out.println(loan.toString());
             }

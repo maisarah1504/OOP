@@ -33,6 +33,5 @@ public abstract class Loan {
                "\nLoan Term: " + loanTerm + " months";
     }
     
-    public abstract double calculateMonthlyPayment();
     
 }
