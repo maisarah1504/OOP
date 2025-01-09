@@ -12,7 +12,7 @@ package oopproject;
 public class VehicleLoan extends Loan{
     private String vehicleType, vehicleModel;
     
-     public VehicleLoan(String vehicleType, String vehicleModel) {
+     public VehicleLoan(String vehicleType, String vehicleModel){
         this.vehicleType = vehicleType;
         this.vehicleModel = vehicleModel;
     }
