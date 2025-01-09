@@ -67,13 +67,6 @@ public class LoanApplication {
 
                 case 2:
                     System.out.println("\n--- Add New Loan ---");
-                    System.out.print("Enter Loan ID: ");
-                    String loanId = scanner.nextLine();
-                    System.out.print("Enter Loan Amount: ");
-                    double amount = scanner.nextDouble();
-                    System.out.print("Enter Loan Term (in months): ");
-                    int loanTerm = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
                     System.out.print("Enter Loan Type (Vehicle/Personal/Study): ");
                     String loanType = scanner.nextLine();
 
@@ -83,7 +76,7 @@ public class LoanApplication {
                         String vehicleType = scanner.nextLine();
                         System.out.print("Enter Vehicle Model: ");
                         String vehicleModel = scanner.nextLine();
-                        newLoan = new VehicleLoan(loanId, amount, interestRate, loanTerm, vehicleType, vehicleModel);
+                        newLoan = new VehicleLoan(vehicleType, vehicleModel);
                     } else if (loanType.equalsIgnoreCase("Personal")) {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();

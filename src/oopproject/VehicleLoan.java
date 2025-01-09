@@ -12,7 +12,12 @@ package oopproject;
 public class VehicleLoan extends Loan{
     private String vehicleType, vehicleModel;
     
-    public VehicleLoan(String loanID, double amount, double interestRate, int loanTerm, String vehicleType, String vehicleModel){
+     public VehicleLoan(String vehicleType, String vehicleModel) {
+        this.vehicleType = vehicleType;
+        this.vehicleModel = vehicleModel;
+    }
+    
+    public VehicleLoan(String loanID, double amount, int loanTerm, String vehicleType, String vehicleModel){
         super(loanID, amount, loanTerm);
         this.vehicleType = vehicleType;
         this.vehicleModel = vehicleModel;
