@@ -9,6 +9,7 @@ package oopproject;
  *
  * @author USER
  */
-public interface Status { //interface
-    
+public interface Status {
+    String getStatus();
+    void setStatus(String status);
 }

@@ -21,7 +21,7 @@ public class Applicant {
     private String address;
     private String dob;
     private Loan[] loans;
-    private int loanCount; // Tracks the number of loans
+    private int loanCount; // Tracks the number of loans   
 
     public Applicant(String id, String name, String email, String phoneNumber, String address, String dob) {
         this.id = id;
@@ -91,9 +91,12 @@ public class Applicant {
         }
         return null; // Not found
     }
-
+    
+    public void displayDetails(){
+    }
+    
     // Getters
-    public String getID() {
+    public String getId() {
         return id;
     }
 
