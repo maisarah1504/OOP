@@ -12,17 +12,20 @@ public class StudyLoan extends Loan {
     private String universityName;
     private String programOfStudy;
 
-    public StudyLoan(String loanID, double amount, int loanTerm, String universityName, String programOfStudy) {
-        super(loanID, amount, loanTerm);
+    public StudyLoan(double amount, int loanTerm, String universityName, String programOfStudy){
+        super(amount, loanTerm);
         this.universityName = universityName;
         this.programOfStudy = programOfStudy;
     }
-
-    @Override
-    public double calculateMonthlyPayment() {
-        double monthlyRate = interestRate / 12 / 100;
-        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+    public StudyLoan(double amount, int loanTerm){
+        super(amount, loanTerm);
     }
+    
+//    @Override
+//    public double calculateMonthlyPayment() {
+//        double monthlyRate = interestRate / 12 / 100;
+//        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+//    }
 
     @Override
     public String toString() {

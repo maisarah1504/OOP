@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package oopproject;
 
@@ -9,35 +8,11 @@ package oopproject;
  *
  * @author USER
  */
-import java.util.ArrayList;
-import java.util.List;
+
+
 import java.util.Scanner;
 
 public class LoanApplication {
-    private List<Applicant> applicants; 
-    private final double interestRate = 10.0; 
-
-    public LoanApplication() {
-        this.applicants = new ArrayList<>();
-    }
-
-    public Applicant createApplicant(String applicantId, String name, String email, String phoneNumber, String address, String dob) {
-        Applicant newApplicant = new Applicant(applicantId, name, email, phoneNumber, address, dob);
-        applicants.add(newApplicant);
-        return newApplicant;
-    }
-
-    
-    public Applicant findApplicant(String applicantId) {
-        for (Applicant applicant : applicants) {
-            if (applicant.getID().equals(applicantId)) {
-                return applicant;
-            }
-        }
-        return null; 
-    }
-
-    
     public void manageLoans(Applicant applicant) {
         Scanner scanner = new Scanner(System.in);
 
@@ -47,57 +22,72 @@ public class LoanApplication {
             System.out.println("2. Add New Loan");
             System.out.println("3. Go Back");
             System.out.print("Choose an option: ");
-            int loanOption = scanner.nextInt();
-            scanner.nextLine(); 
+            int option = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
 
-            if (loanOption == 3) {
-                break;
-            }
+            if (option == 3) break;
 
-            switch (loanOption) {
+            switch (option) {
                 case 1:
-                    System.out.println("\n--- Existing Loans ---");
-                    if (applicant.getLoan().isEmpty()) {
-                        System.out.println("No loans found for this applicant.");
-                    } else {
-                        applicant.displayApplicantDetails();
-                    }
+                    applicant.displayApplicantDetails();
                     break;
 
                 case 2:
-                    System.out.println("\n--- Add New Loan ---");
                     System.out.print("Enter Loan Type (Vehicle/Personal/Study): ");
                     String loanType = scanner.nextLine();
+                    Loan loan;
 
-                    Loan newLoan = null;
                     if (loanType.equalsIgnoreCase("Vehicle")) {
                         System.out.print("Enter Vehicle Type: ");
                         String vehicleType = scanner.nextLine();
                         System.out.print("Enter Vehicle Model: ");
                         String vehicleModel = scanner.nextLine();
-                        newLoan = new VehicleLoan(vehicleType, vehicleModel);
-                    } else if (loanType.equalsIgnoreCase("Personal")) {
+                        
+                        System.out.println("Enter amount: (RM)");
+                        double amount = scanner.nextDouble();
+                        System.out.println("Enter loan term: ");
+                        int loanTerm = scanner.nextInt();
+                        
+                        loan = new VehicleLoan(amount, loanTerm, vehicleType, vehicleModel);
+                    } 
+                    else if (loanType.equalsIgnoreCase("Personal")) {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
-                        newLoan = new PersonalLoan(loanId, amount, interestRate, loanTerm, purpose);
-                    }else if (loanType.equalsIgnoreCase("Study")) {
-                        System.out.print("Enter University Name: ");
-                        String universityName = scanner.nextLine();
-                        System.out.print("Enter Program of Study: ");
-                        String programOfStudy = scanner.nextLine();
-                        newLoan = new StudyLoan(loanId, amount, loanTerm, universityName, programOfStudy);
+                        
+                        System.out.println("Enter amount: (RM)");
+                        double amount = scanner.nextDouble();
+                        System.out.println("Enter loan term: ");
+                        int loanTerm = scanner.nextInt();
+                        
+                        loan = new PersonalLoan(amount, loanTerm, purpose);
+                    } 
+                    else if (loanType.equalsIgnoreCase("Study")){
+                        System.out.println("Enter University Name: ");
+                        String uniName = scanner.nextLine(); 
+                        System.out.println("Enter Program of Study: ");
+                        String program = scanner.nextLine();
+                        
+                        System.out.println("Enter amount: (RM)");
+                        double amount = scanner.nextDouble();
+                        System.out.println("Enter loan term: ");
+                        int loanTerm = scanner.nextInt();
+                        
+                        loan = new StudyLoan(amount, loanTerm, uniName, program);
+                        
+                    }    
+                    else {
+                            
+                        System.out.println("Invalid loan type!");
+                        continue;
                     }
 
-                    if (newLoan != null) {
-                        applicant.addLoan(newLoan);
-                        System.out.println("Loan added successfully!");
-                    } else {
-                        System.out.println("Invalid loan type.");
-                    }
-                    break;
+//                    if (applicant.addLoan(loan)) {
+//                        System.out.println("Loan added successfully!");
+//                    }
+//                    break;
 
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("Invalid option. Try again.");
             }
         }
     }
@@ -112,49 +102,50 @@ public class LoanApplication {
             System.out.println("3. Exit");
             System.out.print("Choose an option: ");
             int option = scanner.nextInt();
-            scanner.nextLine(); 
-            
-            Applicant applicant = null; 
-            
-            if (option == 1) {
-                System.out.println("Enter ID: ");
-                String applicantId = scanner.nextLine();
-                applicant = findApplicant(applicantId);
-                
-                if (applicant != null) {
-                    System.out.println("Applicant ID: " + applicant.getID() + " found.");
-                } else {
-                    System.out.println("Applicant not found. Please sign up.");
-                    continue; 
-                }
+            scanner.nextLine();
+
+            if (option == 3) {
+                System.out.println("Exiting...");
+                break;
             }
-            
-            if (option == 2) {
+
+            if (option == 1) {
+                System.out.print("Enter Applicant ID: ");
+                String id = scanner.nextLine();
+                Applicant applicant = Applicant.findApplicant(id);
+
+                if (applicant == null) {
+                    System.out.println("Applicant not found. Please sign up first.");
+                    continue;
+                }
+
+                manageLoans(applicant);
+
+            } else if (option == 2) {
                 System.out.print("Enter ID: ");
-                String applicantId = scanner.nextLine();
+                String id = scanner.nextLine();
                 System.out.print("Enter Name: ");
                 String name = scanner.nextLine();
                 System.out.print("Enter Email: ");
                 String email = scanner.nextLine();
-                System.out.println("Enter Phone Number: ");
+                System.out.print("Enter Phone Number: ");
                 String phoneNumber = scanner.nextLine();
-                System.out.println("Enter Address: ");
+                System.out.print("Enter Address: ");
                 String address = scanner.nextLine();
-                System.out.println("Enter Date of Birth: ");
+                System.out.print("Enter Date of Birth: ");
                 String dob = scanner.nextLine();
-                
-                applicant = createApplicant(applicantId, name, email, phoneNumber, address, dob);
-                System.out.println("Applicant ID: " + applicant.getID() + " created.");
-            }
-            
-            if (option == 3) {
-                System.out.println("Exiting the system...");
-                break;
-            }
 
-            manageLoans(applicant);
+                Applicant.addApplicant(id, name, email, phoneNumber, address, dob);
+            } else {
+                System.out.println("Invalid option. Try again.");
+            }
         }
 
         scanner.close();
+    }
+
+    public static void main(String[] args) {
+        LoanApplication app = new LoanApplication();
+        app.run();
     }
 }

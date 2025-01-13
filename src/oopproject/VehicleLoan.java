@@ -1,52 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package oopproject;
 
 /**
- *
- * @author USER
+ * VehicleLoan class inherits from the Loan class.
+ * Represents a loan specifically for a vehicle.
  */
-public class VehicleLoan extends Loan{
-    private String vehicleType, vehicleModel;
-    
-     public VehicleLoan(String vehicleType, String vehicleModel){
+public class VehicleLoan extends Loan {
+    private String vehicleType;
+    private String vehicleModel;
+
+
+    // Constructor to initialize loan and vehicle details
+    public VehicleLoan(double amount, int loanTerm, String vehicleType, String vehicleModel) {
+        super(amount, loanTerm); // Call the superclass constructor
         this.vehicleType = vehicleType;
         this.vehicleModel = vehicleModel;
     }
-    
-    public VehicleLoan(double amount, int loanTerm, String vehicleType, String vehicleModel){
-        super(amount, loanTerm);
-        this.vehicleType = vehicleType;
-        this.vehicleModel = vehicleModel;
-    }
-    
-    public void displayVehicleDetails(){
-        System.out.println(" Vehicle Type: " + vehicleType);
-        System.out.println(" Vehicle Model: " + vehicleModel);
-    }
-    
-    public double calculateMonthlyPayment(){
-        double monthlyRate = interestRate / 12 /100;
-        return (amount * monthlyRate)/(1- Math.pow(1 + monthlyRate, -loanTerm));
-    }
-    
-    public String getVehicleType(){
+
+    // Getter for vehicleType
+    public String getVehicleType() {
         return vehicleType;
     }
-    
-    public void setVehicleType(String vehicleType){
+
+    // Setter for vehicleType
+    public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
-    
-    public String getVehicleModel(){
+
+    // Getter for vehicleModel
+    public String getVehicleModel() {
         return vehicleModel;
     }
-    
-    public void setVehicleModel(String vehicleModel){
+
+    // Setter for vehicleModel
+    public void setVehicleModel(String vehicleModel) {
         this.vehicleModel = vehicleModel;
     }
-    
 }
