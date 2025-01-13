@@ -33,7 +33,12 @@ public class StudyLoan extends Loan {
                "\nUniversity Name: " + universityName +
                "\nProgram of Study: " + programOfStudy;
     }
-
+    
+    @Override
+    protected String getLoanPrefix() {
+        return "S"; // Prefix for Study loans
+    }
+    
     public String getUniversityName() {
         return universityName;
     }

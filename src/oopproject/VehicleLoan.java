@@ -15,6 +15,11 @@ public class VehicleLoan extends Loan {
         this.vehicleType = vehicleType;
         this.vehicleModel = vehicleModel;
     }
+    
+    @Override
+    protected String getLoanPrefix() {
+        return "V"; // Prefix for Vehicle loans
+    }
 
     // Getter for vehicleType
     public String getVehicleType() {

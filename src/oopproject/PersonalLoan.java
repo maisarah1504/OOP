@@ -18,7 +18,12 @@ public class PersonalLoan extends Loan {
         this.loanPurpose = loanPurpose;
 //        this.repayment = calculateMonthlyPayment();  // Set repayment during initialization
     }
-
+    
+    @Override
+    protected String getLoanPrefix() {
+        return "P"; // Prefix for Personal loans
+    }
+    
     public String getLoanPurpose() {
         return loanPurpose;
     }

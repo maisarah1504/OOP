@@ -9,6 +9,6 @@ package oopproject;
  *
  * @author USER
  */
-public class Status { //interface
+public interface Status { //interface
     
 }
