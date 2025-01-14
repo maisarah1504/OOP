@@ -31,10 +31,18 @@ public abstract class Loan implements Repayment{
         return String.format("%s%03d", getLoanPrefix(), loanCounter); // Format as "V001", "S002", etc.
     }
     
-    public double calculateMonthlyPayment(double interestRate){
-        return 0;
-        
-    }
+    // Abstract methods from Repayment interface
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public abstract double getMonthlyPayment();
+
+    @Override
+    public abstract double getTotalPayment();
+
 
     public String getLoanId() {
         return loanId;

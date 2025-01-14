@@ -10,6 +10,6 @@ package oopproject;
  * @author USER
  */
 public interface Repayment {
-    double getMonthyPayment();
+    double getMonthlyPayment();
     double getTotalPayment();
 }

@@ -46,7 +46,7 @@ public class Applicant {
     }
 
     // Display applicant details
-    public void displayApplicantDetails() {
+    public void displayDetails() {
         System.out.println("Applicant ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Email: " + email);
@@ -92,15 +92,56 @@ public class Applicant {
         return null; // Not found
     }
     
-    public void displayDetails(){
-    }
-    
     // Getters
     public String getId() {
         return id;
     }
 
-    public String getName() {
+    public void setId(){
+        this.id = id; 
+    }
+    
+    public String getName(String name) {
         return name;
     }
+    
+    public void setName(){
+        this.name = name;
+    }
+    
+    public String getEmail(String email){
+        return email;
+    }
+    
+    public void setEmail(){
+        this.email = email;
+    }
+    
+    public String getPhoneNum (String phoneNumber){
+        return phoneNumber;
+    }
+    
+    public void setPhoneNumber (){
+        this.phoneNumber = phoneNumber; 
+    }
+    
+    public String getAddress(String address) {
+        return address;
+    }
+    
+    public void setAddress(){
+        this.address = address;
+    }
+    
+    public String getDoB(String dob){
+        return dob;
+    }
+    
+    public void setDoB(){
+        this.dob = dob;
+    }
+    
+    
+    
+    
 }

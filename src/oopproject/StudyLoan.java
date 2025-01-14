@@ -8,7 +8,7 @@ package oopproject;
  *
  * @author USER
  */
-public class StudyLoan extends Loan implements Repayment {
+public class StudyLoan extends Loan{
     private String universityName;
     private String programOfStudy;
     private double repayment; 
@@ -17,20 +17,26 @@ public class StudyLoan extends Loan implements Repayment {
         super(amount, loanTerm);
         this.universityName = universityName;
         this.programOfStudy = programOfStudy;
+        
     }
     public StudyLoan(double amount, int loanTerm){
         super(amount, loanTerm);
     }
     
     @Override
-    public double calculateMonthlyPayment(double interestRate) {
-        double monthlyRate = interestRate / 12 / 100;
-        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+    protected String getLoanPrefix() {
+        return "S"; // Prefix for Study loans
     }
     
     @Override
-    protected String getLoanPrefix() {
-        return "S"; // Prefix for Study loans
+    public double getMonthlyPayment() {
+        double monthlyRate = interestRate / 12 / 100;
+        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+    }
+
+    @Override
+    public double getTotalPayment() {
+        return getMonthlyPayment() * loanTerm;
     }
     
     public String getUniversityName() {
