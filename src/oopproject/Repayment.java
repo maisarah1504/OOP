@@ -9,7 +9,7 @@ package oopproject;
  *
  * @author USER
  */
-public interface Status {
-    String getStatus();
-    void setStatus(String status);
+public interface Repayment {
+    double getMonthyPayment();
+    double getTotalPayment();
 }

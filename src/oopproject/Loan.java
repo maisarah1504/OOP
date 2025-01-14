@@ -9,7 +9,7 @@ package oopproject;
  *
  * @author USER
  */
-public abstract class Loan implements Status{
+public abstract class Loan implements Repayment{
     private static int loanCounter = 0; // Static counter for loan IDs
     private String loanId; // Auto-generated loan ID
     public double amount;
@@ -31,7 +31,10 @@ public abstract class Loan implements Status{
         return String.format("%s%03d", getLoanPrefix(), loanCounter); // Format as "V001", "S002", etc.
     }
     
-    protected abstract double calculateMonthlyPayment(double interestRate);
+    public double calculateMonthlyPayment(double interestRate){
+        return 0;
+        
+    }
 
     public String getLoanId() {
         return loanId;

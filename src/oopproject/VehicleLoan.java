@@ -4,10 +4,10 @@ package oopproject;
  * VehicleLoan class inherits from the Loan class.
  * Represents a loan specifically for a vehicle.
  */
-public class VehicleLoan extends Loan {
+public class VehicleLoan extends Loan implements Repayment {
     private String vehicleType;
     private String vehicleModel;
-
+    private double repayment; 
 
     // Constructor to initialize loan and vehicle details
     public VehicleLoan(double amount, int loanTerm, String vehicleType, String vehicleModel) {
@@ -16,6 +16,12 @@ public class VehicleLoan extends Loan {
         this.vehicleModel = vehicleModel;
     }
     
+    /**
+     *
+     * @param customInterestRate
+     * @return
+     */
+    @Override
     public double calculateMonthlyPayment(double customInterestRate) {
         double monthlyRate = customInterestRate / 12 / 100;
         return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
