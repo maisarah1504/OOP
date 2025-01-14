@@ -16,7 +16,14 @@ public class PersonalLoan extends Loan {
     public PersonalLoan(double amount, int loanTerm, String loanPurpose) {
         super(amount, loanTerm);
         this.loanPurpose = loanPurpose;
-//        this.repayment = calculateMonthlyPayment();  // Set repayment during initialization
+        this.repayment = calculateMonthlyPayment(interestRate);  
+    }
+    
+    public PersonalLoan(double amount, int loanTerm, String loanPurpose, double interestRate) {
+        super(amount, loanTerm);
+        this.loanPurpose = loanPurpose;
+        this.interestRate = interestRate; // Custom interest rate
+        this.repayment = calculateMonthlyPayment(interestRate);
     }
     
     @Override
@@ -32,15 +39,10 @@ public class PersonalLoan extends Loan {
         this.loanPurpose = loanPurpose;
     }
 
-//    @Override
-//    public double calculateMonthlyPayment() {
-//        double monthlyRate = interestRate / 12 / 100;
-//        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
-//    }
-
     @Override
-    public String toString() {
-        return super.toString() +
-               "\nLoan Purpose: " + loanPurpose;
+    public double calculateMonthlyPayment(double interestRate) {
+        double monthlyRate = interestRate / 12 / 100;
+        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
     }
+    
 }

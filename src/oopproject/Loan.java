@@ -12,9 +12,9 @@ package oopproject;
 public abstract class Loan implements Status{
     private static int loanCounter = 0; // Static counter for loan IDs
     private String loanId; // Auto-generated loan ID
-    private double amount;
-    private double interestRate;
-    private int loanTerm;
+    public double amount;
+    public double interestRate;
+    public int loanTerm;
 
    public Loan(double amount, int loanTerm) {
         this.amount = amount;
@@ -30,6 +30,8 @@ public abstract class Loan implements Status{
         loanCounter++; // Increment counter
         return String.format("%s%03d", getLoanPrefix(), loanCounter); // Format as "V001", "S002", etc.
     }
+    
+    protected abstract double calculateMonthlyPayment(double interestRate);
 
     public String getLoanId() {
         return loanId;
@@ -46,12 +48,21 @@ public abstract class Loan implements Status{
     public int getLoanTerm() {
         return loanTerm;
     }
-
-    @Override
-    public String toString() {
-        return "Loan ID: " + loanId + "\n" +
-               "Loan Amount: $" + amount + "\n" +
-               "Interest Rate: " + interestRate + "%\n" +
-               "Loan Term: " + loanTerm + " months";
+    
+    public void setLoanId(){
+        this.loanId = loanId;
     }
+    
+    public void setAmount(){
+        this.amount = amount;
+    }
+    
+    public void setInterestRate(){
+        this.interestRate = interestRate; 
+    }
+    
+    public void setLoanTerm(){
+        this.loanTerm = loanTerm;
+    }
+    
 }

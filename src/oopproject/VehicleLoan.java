@@ -16,6 +16,11 @@ public class VehicleLoan extends Loan {
         this.vehicleModel = vehicleModel;
     }
     
+    public double calculateMonthlyPayment(double customInterestRate) {
+        double monthlyRate = customInterestRate / 12 / 100;
+        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
+    }
+
     @Override
     protected String getLoanPrefix() {
         return "V"; // Prefix for Vehicle loans

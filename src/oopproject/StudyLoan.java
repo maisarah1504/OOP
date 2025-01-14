@@ -26,13 +26,6 @@ public class StudyLoan extends Loan {
 //        double monthlyRate = interestRate / 12 / 100;
 //        return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
 //    }
-
-    @Override
-    public String toString() {
-        return super.toString() + 
-               "\nUniversity Name: " + universityName +
-               "\nProgram of Study: " + programOfStudy;
-    }
     
     @Override
     protected String getLoanPrefix() {
