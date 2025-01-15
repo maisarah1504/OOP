@@ -85,19 +85,19 @@ public class LoanApplication {
                         String vehicleType = scanner.nextLine();
                         System.out.print("Enter Vehicle Model: ");
                         String vehicleModel = scanner.nextLine();
-                        loans = new VehicleLoan(amount, term, vehicleType, vehicleModel);
-                        
+                        loans = LoanFactory.createLoan("vehicle", amount, term, vehicleType, vehicleModel);
+                        break;
                     } else if (type.equalsIgnoreCase("Study")) {
                         System.out.print("Enter University Name: ");
                         String university = scanner.nextLine();
                         System.out.print("Enter Program of Study: ");
                         String program = scanner.nextLine();
-                        loans = new StudyLoan(amount, term, university, program);
+                        loans = LoanFactory.createLoan("study", amount, term, university, program);
                         
                     } else if (type.equalsIgnoreCase("Personal")) {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
-                        loans = new PersonalLoan(amount, term, purpose);
+                        loans = LoanFactory.createLoan("personal", amount, term, purpose);
                     } else {
                         System.out.println("Invalid loan type!");
                     }
