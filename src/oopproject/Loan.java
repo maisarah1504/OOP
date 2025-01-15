@@ -44,12 +44,14 @@ public abstract class Loan implements Repayment{
     /**
      *
      */
-    public void displayLoan(){
-        System.out.println("Loan ID: " + loanId);
-        System.out.println("Amount: RM" + amount);
-        System.out.println("Loan Term (month): " + loanTerm);
-        System.out.println("Interest Rate (%): " + interestRate);
+    @Override
+    public String toString() {
+        return String.format(
+            "Loan ID: %s\nAmount: RM%.2f\nLoan Term: %d months\nInterest Rate: %.2f%%",
+            loanId, amount, loanTerm, interestRate * 100
+        );
     }
+
     
     public String getLoanId() {
         return loanId;

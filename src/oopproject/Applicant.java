@@ -56,7 +56,7 @@ public class Applicant {
             System.out.println("No loans available.");
         } else {
             for (int i = 0; i < loanCount; i++) {
-                System.out.println(loans[i].displayLoan());
+                System.out.println(loans[i].toString());
             }
         }
     }
