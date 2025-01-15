@@ -93,10 +93,11 @@ public class LoanApplication {
                         System.out.print("Enter Program of Study: ");
                         String program = scanner.nextLine();
                         loans = new StudyLoan(amount, term, university, program);
+                        
                     } else if (type.equalsIgnoreCase("Personal")) {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
-                        applicant.addLoan(LoanFactory.createLoan(type, amount, term, purpose));
+                        loans = new PersonalLoan(amount, term, purpose);
                     } else {
                         System.out.println("Invalid loan type!");
                     }
