@@ -47,8 +47,8 @@ public abstract class Loan implements Repayment{
     @Override
     public String toString() {
         return String.format(
-            "Loan ID: %s\nAmount: RM%.2f\nLoan Term: %d months\nInterest Rate: %.2f%%",
-            loanId, amount, loanTerm, interestRate * 100
+            "Loan ID: %s\nAmount: RM%.2f\nLoan Term: %d months\nInterest Rate: %.2f%%\nMonthly Payment: RM%.2f\n\n",
+            loanId, amount, loanTerm, interestRate * 100, getMonthlyPayment()
         );
     }
 
