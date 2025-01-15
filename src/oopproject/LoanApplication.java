@@ -79,19 +79,20 @@ public class LoanApplication {
                     System.out.print("Enter Loan Term (months): ");
                     int term = scanner.nextInt();
                     scanner.nextLine();
-
+                    Loan loans;
                     if (type.equalsIgnoreCase("Vehicle")) {
                         System.out.print("Enter Vehicle Type: ");
                         String vehicleType = scanner.nextLine();
                         System.out.print("Enter Vehicle Model: ");
                         String vehicleModel = scanner.nextLine();
-                        applicant.addLoan(LoanFactory.createLoan(type, amount, term, vehicleType, vehicleModel));
+                        loans = new VehicleLoan(amount, term, vehicleType, vehicleModel);
+                        
                     } else if (type.equalsIgnoreCase("Study")) {
                         System.out.print("Enter University Name: ");
                         String university = scanner.nextLine();
                         System.out.print("Enter Program of Study: ");
                         String program = scanner.nextLine();
-                        applicant.addLoan(LoanFactory.createLoan(type, amount, term, university, program));
+                        loans = new StudyLoan(amount, term, university, program);
                     } else if (type.equalsIgnoreCase("Personal")) {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
