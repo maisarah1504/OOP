@@ -40,10 +40,6 @@ public abstract class Loan implements Repayment{
     @Override
     public abstract double getMonthlyPayment();
 
-    @Override
-    public abstract double getTotalPayment();
-
-
     public String getLoanId() {
         return loanId;
     }
