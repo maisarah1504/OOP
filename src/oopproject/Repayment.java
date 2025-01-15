@@ -11,5 +11,4 @@ package oopproject;
  */
 public interface Repayment {
     double getMonthlyPayment();
-    double getTotalPayment();
 }
