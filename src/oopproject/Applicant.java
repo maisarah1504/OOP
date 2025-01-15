@@ -35,13 +35,11 @@ public class Applicant {
     }
 
     // Add a loan to the applicant
-    public boolean addLoan(Loan loan) {
+    public void addLoan(Loan loan) {
         if (loanCount < loans.length) {
             loans[loanCount++] = loan;
-            return true;
         } else {
             System.out.println("Cannot add more loans. Maximum limit reached.");
-            return false;
         }
     }
 
