@@ -28,6 +28,9 @@ public class GUIAddLoan extends javax.swing.JFrame {
     private void initComponents() {
 
         UserDashboard = new javax.swing.JLabel();
+        ButtonVehicle = new javax.swing.JButton();
+        ButtonPersonal = new javax.swing.JButton();
+        ButtonStudy = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 0, 153));
@@ -36,25 +39,75 @@ public class GUIAddLoan extends javax.swing.JFrame {
         UserDashboard.setForeground(new java.awt.Color(51, 0, 0));
         UserDashboard.setText("User Dashboard");
 
+        ButtonVehicle.setText("Vehicle");
+        ButtonVehicle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonVehicleActionPerformed(evt);
+            }
+        });
+
+        ButtonPersonal.setText("Personal");
+        ButtonPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonPersonalActionPerformed(evt);
+            }
+        });
+
+        ButtonStudy.setText("Study");
+        ButtonStudy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonStudyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(146, 146, 146)
                 .addComponent(UserDashboard)
-                .addGap(150, 150, 150))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(ButtonVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(ButtonPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addComponent(ButtonStudy, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(28, 28, 28)
                 .addComponent(UserDashboard)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonVehicle)
+                    .addComponent(ButtonPersonal)
+                    .addComponent(ButtonStudy))
+                .addGap(143, 143, 143))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVehicleActionPerformed
+        // TODO add your handling code here:
+        GUIVehicleLoan jf3 = new GUIVehicleLoan ();
+        jf3.show(); 
+        
+        
+    }//GEN-LAST:event_ButtonVehicleActionPerformed
+
+    private void ButtonPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPersonalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonPersonalActionPerformed
+
+    private void ButtonStudyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonStudyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonStudyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,6 +146,9 @@ public class GUIAddLoan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonPersonal;
+    private javax.swing.JButton ButtonStudy;
+    private javax.swing.JButton ButtonVehicle;
     private javax.swing.JLabel UserDashboard;
     // End of variables declaration//GEN-END:variables
 }
