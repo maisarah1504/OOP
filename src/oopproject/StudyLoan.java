@@ -34,11 +34,6 @@ public class StudyLoan extends Loan{
         return (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanTerm));
     }
 
-    @Override
-    public double getTotalPayment() {
-        return getMonthlyPayment() * loanTerm;
-    }
-    
     public String getUniversityName() {
         return universityName;
     }
