@@ -58,7 +58,7 @@ public class Applicant {
             for (int i = 0; i < loanCount; i++) {
                 System.out.println(loans[i].toString());
             }
-        }
+        }   
     }
 
     // Static method to add a new applicant
@@ -99,43 +99,47 @@ public class Applicant {
         this.id = id; 
     }
     
-    public String getName(String name) {
+    public String getName() {
         return name;
     }
     
-    public void setName(){
+    public void setName(String name){
         this.name = name;
     }
     
-    public String getEmail(String email){
+    public String getEmail(){
         return email;
     }
     
-    public void setEmail(){
-        this.email = email;
+    public void setEmail(String email){
+    if (email.contains("@")) {
+           this.email = email;
+       } else {
+           System.out.println("Invalid email format.");
+       }    
     }
     
-    public String getPhoneNum (String phoneNumber){
+    public String getPhoneNum (){
         return phoneNumber;
     }
     
-    public void setPhoneNumber (){
+    public void setPhoneNumber (String phoneNumber){
         this.phoneNumber = phoneNumber; 
     }
     
-    public String getAddress(String address) {
+    public String getAddress() {
         return address;
     }
     
-    public void setAddress(){
+    public void setAddress(String address){
         this.address = address;
     }
     
-    public String getDoB(String dob){
+    public String getDoB(){
         return dob;
     }
     
-    public void setDoB(){
+    public void setDoB(String dob){
         this.dob = dob;
     }
     

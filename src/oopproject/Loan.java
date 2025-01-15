@@ -69,19 +69,19 @@ public abstract class Loan implements Repayment{
         return loanTerm;
     }
     
-    public void setLoanId(){
+    public void setLoanId(String loanId){
         this.loanId = loanId;
     }
     
-    public void setAmount(){
+    public void setAmount(double amount){
         this.amount = amount;
     }
     
-    public void setInterestRate(){
+    public void setInterestRate(double interestRate){
         this.interestRate = 0.1; 
     }
     
-    public void setLoanTerm(){
+    public void setLoanTerm(int loanTerm){
         this.loanTerm = loanTerm;
     }
     
