@@ -86,6 +86,7 @@ public class LoanApplication {
                         System.out.print("Enter Vehicle Model: ");
                         String vehicleModel = scanner.nextLine();
                         loans = LoanFactory.createLoan("vehicle", amount, term, vehicleType, vehicleModel);
+                        applicant.addLoan(loans);
                         break;
                     } else if (type.equalsIgnoreCase("Study")) {
                         System.out.print("Enter University Name: ");
@@ -93,11 +94,12 @@ public class LoanApplication {
                         System.out.print("Enter Program of Study: ");
                         String program = scanner.nextLine();
                         loans = LoanFactory.createLoan("study", amount, term, university, program);
-                        
+                        applicant.addLoan(loans);
                     } else if (type.equalsIgnoreCase("Personal")) {
                         System.out.print("Enter Loan Purpose: ");
                         String purpose = scanner.nextLine();
                         loans = LoanFactory.createLoan("personal", amount, term, purpose);
+                        applicant.addLoan(loans);
                     } else {
                         System.out.println("Invalid loan type!");
                     }
