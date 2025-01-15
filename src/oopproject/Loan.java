@@ -20,6 +20,7 @@ public abstract class Loan implements Repayment{
         this.amount = amount;
         this.loanTerm = loanTerm;
         this.loanId = generateLoanId(); // Auto-generate ID
+        this.interestRate = 0.1;
     }
 
     // Abstract method to get loan type prefix
@@ -39,7 +40,17 @@ public abstract class Loan implements Repayment{
      */
     @Override
     public abstract double getMonthlyPayment();
-
+    
+    /**
+     *
+     */
+    public void displayLoan(){
+        System.out.println("Loan ID: " + loanId);
+        System.out.println("Amount: RM" + amount);
+        System.out.println("Loan Term (month): " + loanTerm);
+        System.out.println("Interest Rate (%): " + interestRate);
+    }
+    
     public String getLoanId() {
         return loanId;
     }
@@ -65,7 +76,7 @@ public abstract class Loan implements Repayment{
     }
     
     public void setInterestRate(){
-        this.interestRate = interestRate; 
+        this.interestRate = 0.1; 
     }
     
     public void setLoanTerm(){
