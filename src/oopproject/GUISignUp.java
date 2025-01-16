@@ -172,6 +172,10 @@ public class GUISignUp extends javax.swing.JFrame {
         }
         else 
             JOptionPane.showMessageDialog(null, "Applicant Registered Successfully!");
+            GUILoanSystem jf2 = new GUILoanSystem ();
+            jf2.show(); 
+        
+            dispose();
         
     }//GEN-LAST:event_btnSubmit2ActionPerformed
 

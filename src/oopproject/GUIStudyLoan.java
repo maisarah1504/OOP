@@ -196,13 +196,17 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         }
         else 
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
+            GUILoanSystem jf2 = new GUILoanSystem ();
+            jf2.show();
+            
+            dispose ();
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed
 
     private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
         // TODO add your handling code here:
-        GUILoanSystem jf2 = new GUILoanSystem ();
-        jf2.show(); 
+        GUIAddLoan jf3 = new GUIAddLoan ();
+        jf3.show(); 
         
         dispose();
     }//GEN-LAST:event_btnBack4ActionPerformed

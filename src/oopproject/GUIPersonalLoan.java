@@ -168,13 +168,16 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
         }
         else 
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
-        
+            GUILoanSystem jf2 = new GUILoanSystem ();
+            jf2.show();
+            
+            dispose ();
     }//GEN-LAST:event_btnSubmit1ActionPerformed
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
         // TODO add your handling code here:
-        GUILoanSystem jf2 = new GUILoanSystem ();
-        jf2.show(); 
+        GUIAddLoan jf3 = new GUIAddLoan ();
+        jf3.show(); 
         
         dispose();
     }//GEN-LAST:event_btnBack2ActionPerformed
