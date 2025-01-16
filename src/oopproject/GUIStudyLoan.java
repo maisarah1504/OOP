@@ -41,6 +41,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         btnSubmit3 = new javax.swing.JButton();
+        btnBack4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,13 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             }
         });
 
+        btnBack4.setText("Back");
+        btnBack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +113,9 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSubmit3)
-                .addGap(59, 59, 59))
+                .addGap(18, 18, 18)
+                .addComponent(btnBack4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(271, 271, 271)
@@ -138,9 +148,11 @@ public class GUIStudyLoan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(ProgramOfStudy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(btnSubmit3)
-                .addGap(28, 28, 28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit3)
+                    .addComponent(btnBack4))
+                .addGap(31, 31, 31))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(204, 204, 204)
@@ -185,6 +197,14 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed
 
+    private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
+        // TODO add your handling code here:
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show(); 
+        
+        dispose();
+    }//GEN-LAST:event_btnBack4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,6 +245,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
     private javax.swing.JTextField LoanTermStudyLoan;
     private javax.swing.JTextField ProgramOfStudy;
     private javax.swing.JTextField UniName;
+    private javax.swing.JButton btnBack4;
     private javax.swing.JButton btnSubmit3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

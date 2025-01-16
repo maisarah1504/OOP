@@ -237,6 +237,10 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show(); 
+        
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

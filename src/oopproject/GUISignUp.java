@@ -42,6 +42,7 @@ public class GUISignUp extends javax.swing.JFrame {
         Address2 = new javax.swing.JTextField();
         DOB = new javax.swing.JTextField();
         btnSubmit2 = new javax.swing.JButton();
+        btnBack3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +72,13 @@ public class GUISignUp extends javax.swing.JFrame {
             }
         });
 
+        btnBack3.setText("Back");
+        btnBack3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,14 +100,16 @@ public class GUISignUp extends javax.swing.JFrame {
                     .addComponent(PhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 180, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSubmit2)
-                .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
                 .addGap(294, 294, 294)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSubmit2)
+                .addGap(18, 18, 18)
+                .addComponent(btnBack3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,9 +138,11 @@ public class GUISignUp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(btnSubmit2)
-                .addGap(33, 33, 33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit2)
+                    .addComponent(btnBack3))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -163,6 +175,14 @@ public class GUISignUp extends javax.swing.JFrame {
     private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PhoneNoActionPerformed
+
+    private void btnBack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack3ActionPerformed
+        // TODO add your handling code here:
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show(); 
+        
+        dispose();
+    }//GEN-LAST:event_btnBack3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +226,7 @@ public class GUISignUp extends javax.swing.JFrame {
     private javax.swing.JTextField Email;
     private javax.swing.JTextField NameSignUp;
     private javax.swing.JTextField PhoneNo;
+    private javax.swing.JButton btnBack3;
     private javax.swing.JButton btnSubmit2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

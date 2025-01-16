@@ -23,7 +23,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
         btnSignUp = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,7 +54,12 @@ public class GUILoanSystem extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Exit");
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,7 +81,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addGap(231, 231, 231))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton5)
+                        .addComponent(btnExit)
                         .addGap(285, 285, 285))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,7 +98,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jButton3)
                 .addGap(34, 34, 34)
-                .addComponent(jButton5)
+                .addComponent(btnExit)
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -144,6 +149,11 @@ public class GUILoanSystem extends javax.swing.JFrame {
         dispose(); // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnExitActionPerformed
+
     
     public static void main(String args[]) {
         
@@ -155,10 +165,10 @@ public class GUILoanSystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSignUp;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

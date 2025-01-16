@@ -37,6 +37,7 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         LoanPurpose = new javax.swing.JTextField();
         btnSubmit1 = new javax.swing.JButton();
+        btnBack2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,15 +75,18 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
             }
         });
 
+        btnBack2.setText("Back");
+        btnBack2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSubmit1)
-                .addGap(64, 64, 64))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
@@ -101,7 +105,13 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addGap(64, 240, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSubmit1)
+                .addGap(49, 49, 49)
+                .addComponent(btnBack2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,9 +130,11 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(LoanPurpose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(btnSubmit1)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit1)
+                    .addComponent(btnBack2))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         pack();
@@ -156,6 +168,14 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnSubmit1ActionPerformed
+
+    private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed
+        // TODO add your handling code here:
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show(); 
+        
+        dispose();
+    }//GEN-LAST:event_btnBack2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +216,7 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
     private javax.swing.JTextField AmountPersonalLoan;
     private javax.swing.JTextField LoanPurpose;
     private javax.swing.JTextField LoanTermPersonal;
+    private javax.swing.JButton btnBack2;
     private javax.swing.JButton btnSubmit1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

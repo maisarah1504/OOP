@@ -39,6 +39,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
         VehicleType = new javax.swing.JTextField();
         VehicleModel = new javax.swing.JTextField();
         btnSubmit4 = new javax.swing.JButton();
+        btnBack4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,14 +61,17 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
             }
         });
 
+        btnBack4.setText("Back");
+        btnBack4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBack4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSubmit4)
-                .addGap(65, 65, 65))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -90,6 +94,12 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
                         .addGap(279, 279, 279)
                         .addComponent(jLabel1)))
                 .addContainerGap(243, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnSubmit4)
+                .addGap(28, 28, 28)
+                .addComponent(btnBack4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,9 +122,11 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VehicleModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(33, 33, 33)
-                .addComponent(btnSubmit4)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubmit4)
+                    .addComponent(btnBack4))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,6 +151,14 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
             return;
         }
     }//GEN-LAST:event_btnSubmit4ActionPerformed
+
+    private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
+        // TODO add your handling code here:
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show(); 
+        
+        dispose();
+    }//GEN-LAST:event_btnBack4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,6 +200,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
     private javax.swing.JTextField VehicleLoanTerm;
     private javax.swing.JTextField VehicleModel;
     private javax.swing.JTextField VehicleType;
+    private javax.swing.JButton btnBack4;
     private javax.swing.JButton btnSubmit4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
