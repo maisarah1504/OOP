@@ -80,22 +80,21 @@ public class GUIAddLoan extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
+                .addGap(271, 271, 271)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UserDashboard)
                     .addComponent(jLabel3)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(ButtonPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ButtonStudy, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(ButtonVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
-                .addComponent(UserDashboard)
-                .addGap(145, 145, 145))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ButtonVehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ButtonPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonStudy, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,15 +105,15 @@ public class GUIAddLoan extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(48, 48, 48)
                 .addComponent(ButtonVehicle)
-                .addGap(36, 36, 36)
+                .addGap(42, 42, 42)
                 .addComponent(ButtonPersonal)
-                .addGap(36, 36, 36)
+                .addGap(42, 42, 42)
                 .addComponent(ButtonStudy)
-                .addGap(41, 41, 41))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,18 +121,28 @@ public class GUIAddLoan extends javax.swing.JFrame {
 
     private void ButtonVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVehicleActionPerformed
         // TODO add your handling code here:
-        GUIVehicleLoan jf3 = new GUIVehicleLoan ();
-        jf3.show(); 
+        GUIVehicleLoan jf4 = new GUIVehicleLoan ();
+        jf4.show(); 
         
-        
+        dispose(); // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_ButtonVehicleActionPerformed
 
     private void ButtonPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPersonalActionPerformed
         // TODO add your handling code here:
+        //open JFrame 2(MenuInterface
+        GUIPersonalLoan jf5 = new GUIPersonalLoan ();
+        jf5.show();  //display MenuInterface here
+        
+        dispose(); // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_ButtonPersonalActionPerformed
 
     private void ButtonStudyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonStudyActionPerformed
         // TODO add your handling code here:
+        //open JFrame 2(MenuInterface
+        GUIStudyLoan jf6 = new GUIStudyLoan ();
+        jf6.show();  //display MenuInterface here
+        
+        dispose(); // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_ButtonStudyActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
