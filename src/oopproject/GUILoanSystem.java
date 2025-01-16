@@ -4,6 +4,8 @@
  */
 package oopproject;
 
+import javax.swing.JOptionPane;
+
 
 public class GUILoanSystem extends javax.swing.JFrame {
 
@@ -151,6 +153,8 @@ public class GUILoanSystem extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null, "Thank you for using this system!");
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 

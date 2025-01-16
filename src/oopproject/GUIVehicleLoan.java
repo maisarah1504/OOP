@@ -138,18 +138,20 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Amount!");
             return;
         }
-        if (VehicleLoanTerm.getText().equals("")){
+        else if (VehicleLoanTerm.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Loan Term!");
             return;
         }
-        if (VehicleType.getText().equals("")){
+        else if (VehicleType.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Vehicle Type!");
             return;
         }
-        if (VehicleModel.getText().equals("")){
+        else if (VehicleModel.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Vehicle Model!");
             return;
         }
+        else
+            JOptionPane.showMessageDialog(null, "Loan Submitted!");
     }//GEN-LAST:event_btnSubmit4ActionPerformed
 
     private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed

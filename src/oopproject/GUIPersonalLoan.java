@@ -109,7 +109,7 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnSubmit1)
-                .addGap(49, 49, 49)
+                .addGap(33, 33, 33)
                 .addComponent(btnBack2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55))
         );
@@ -158,14 +158,16 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Personal Loan");
             return;
         }
-        if (LoanTermPersonal.getText().equals("")){
+        else if (LoanTermPersonal.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Loan Term");
             return;
         }
-        if (LoanPurpose.getText().equals("")){
+        else if (LoanPurpose.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Loan Purpose");
             return;
         }
+        else 
+            JOptionPane.showMessageDialog(null, "Loan Submitted!");
         
     }//GEN-LAST:event_btnSubmit1ActionPerformed
 

@@ -154,22 +154,25 @@ public class GUISignUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Name!");
             return;
         }
-        if (Email.getText().equals("")){
+        else if (Email.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Email!");
             return;
         }
-        if (PhoneNo.getText().equals("")){
+        else if (PhoneNo.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Phone Number!");
             return;
         }
-        if (Address1.getText().equals("")){
+        else if (Address1.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Address!");
             return;
         }
-        if (DOB.getText().equals("")){
+        else if (DOB.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Date Of Birth!");
             return;
         }
+        else 
+            JOptionPane.showMessageDialog(null, "Applicant Registered Successfully!");
+        
     }//GEN-LAST:event_btnSubmit2ActionPerformed
 
     private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed

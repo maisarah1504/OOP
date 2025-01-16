@@ -182,18 +182,20 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Amount!");
             return;
         }
-        if (LoanTermStudyLoan.getText().equals("")){
+        else if (LoanTermStudyLoan.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Loan Term!");
             return;
         }
-        if (UniName.getText().equals("")){
+        else if (UniName.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out University Name!");
             return;
         }
-        if (ProgramOfStudy.getText().equals("")){
+        else if (ProgramOfStudy.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Program Of Study!");
             return;
         }
+        else 
+            JOptionPane.showMessageDialog(null, "Loan Submitted!");
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed
 
