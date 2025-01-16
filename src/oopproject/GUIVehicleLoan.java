@@ -5,6 +5,8 @@
  */
 package oopproject;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ainna
@@ -36,7 +38,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
         VehicleLoanTerm = new javax.swing.JTextField();
         VehicleType = new javax.swing.JTextField();
         VehicleModel = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSubmit4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +53,12 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
 
         jLabel5.setText("Vehicle Model:");
 
-        jButton1.setText("Submit");
+        btnSubmit4.setText("Submit");
+        btnSubmit4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,7 +66,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit4)
                 .addGap(65, 65, 65))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,12 +113,32 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
                     .addComponent(VehicleModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(33, 33, 33)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit4)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSubmit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit4ActionPerformed
+        // TODO add your handling code here:
+        if (AmountVehicleLoan.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Amount!");
+            return;
+        }
+        if (VehicleLoanTerm.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Loan Term!");
+            return;
+        }
+        if (VehicleType.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Vehicle Type!");
+            return;
+        }
+        if (VehicleModel.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Vehicle Model!");
+            return;
+        }
+    }//GEN-LAST:event_btnSubmit4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +180,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
     private javax.swing.JTextField VehicleLoanTerm;
     private javax.swing.JTextField VehicleModel;
     private javax.swing.JTextField VehicleType;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSubmit4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

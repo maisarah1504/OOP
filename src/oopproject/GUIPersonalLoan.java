@@ -5,6 +5,8 @@
  */
 package oopproject;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ainna
@@ -33,8 +35,8 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         LoanTermPersonal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        AmountPersonalLoan1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        LoanPurpose = new javax.swing.JTextField();
+        btnSubmit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,13 +61,18 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
 
         jLabel4.setText("Enter Loan Purpose:");
 
-        AmountPersonalLoan1.addActionListener(new java.awt.event.ActionListener() {
+        LoanPurpose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AmountPersonalLoan1ActionPerformed(evt);
+                LoanPurposeActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Submit");
+        btnSubmit1.setText("Submit");
+        btnSubmit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmit1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +80,7 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit1)
                 .addGap(64, 64, 64))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +94,7 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AmountPersonalLoan1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LoanPurpose, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(AmountPersonalLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(LoanTermPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))))
@@ -112,9 +119,9 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(AmountPersonalLoan1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LoanPurpose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit1)
                 .addContainerGap(67, Short.MAX_VALUE))
         );
 
@@ -129,9 +136,26 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LoanTermPersonalActionPerformed
 
-    private void AmountPersonalLoan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmountPersonalLoan1ActionPerformed
+    private void LoanPurposeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoanPurposeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AmountPersonalLoan1ActionPerformed
+    }//GEN-LAST:event_LoanPurposeActionPerformed
+
+    private void btnSubmit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit1ActionPerformed
+        // TODO add your handling code here:
+        if (AmountPersonalLoan.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Personal Loan");
+            return;
+        }
+        if (LoanTermPersonal.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Loan Term");
+            return;
+        }
+        if (LoanPurpose.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Loan Purpose");
+            return;
+        }
+        
+    }//GEN-LAST:event_btnSubmit1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,9 +194,9 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AmountPersonalLoan;
-    private javax.swing.JTextField AmountPersonalLoan1;
+    private javax.swing.JTextField LoanPurpose;
     private javax.swing.JTextField LoanTermPersonal;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSubmit1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -5,6 +5,8 @@
  */
 package oopproject;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ainna
@@ -38,7 +40,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         ProgramOfStudy = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSubmit3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,10 +69,10 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Submit");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit3.setText("Submit");
+        btnSubmit3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSubmit3ActionPerformed(evt);
             }
         });
 
@@ -102,7 +104,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
                 .addContainerGap(162, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnSubmit3)
                 .addGap(59, 59, 59))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -137,7 +139,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(ProgramOfStudy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnSubmit3)
                 .addGap(28, 28, 28))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -162,9 +164,26 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSubmit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if (AmountStudyLoan.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Amount!");
+            return;
+        }
+        if (LoanTermStudyLoan.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Loan Term!");
+            return;
+        }
+        if (UniName.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out University Name!");
+            return;
+        }
+        if (ProgramOfStudy.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Program Of Study!");
+            return;
+        }
+        
+    }//GEN-LAST:event_btnSubmit3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,9 +225,9 @@ public class GUIStudyLoan extends javax.swing.JFrame {
     private javax.swing.JTextField LoanTermStudyLoan;
     private javax.swing.JTextField ProgramOfStudy;
     private javax.swing.JTextField UniName;
+    private javax.swing.JButton btnSubmit3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

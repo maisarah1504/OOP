@@ -5,6 +5,8 @@
  */
 package oopproject;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ainna
@@ -39,7 +41,7 @@ public class GUISignUp extends javax.swing.JFrame {
         Address1 = new javax.swing.JTextField();
         Address2 = new javax.swing.JTextField();
         DOB = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSubmit2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,10 +64,10 @@ public class GUISignUp extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSubmit2.setText("Submit");
+        btnSubmit2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSubmit2ActionPerformed(evt);
             }
         });
 
@@ -92,7 +94,7 @@ public class GUISignUp extends javax.swing.JFrame {
                 .addGap(0, 180, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit2)
                 .addGap(56, 56, 56))
             .addGroup(layout.createSequentialGroup()
                 .addGap(294, 294, 294)
@@ -127,16 +129,36 @@ public class GUISignUp extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(DOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSubmit2)
                 .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if (NameSignUp.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Name!");
+            return;
+        }
+        if (Email.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Email!");
+            return;
+        }
+        if (PhoneNo.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Phone Number!");
+            return;
+        }
+        if (Address1.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Address!");
+            return;
+        }
+        if (DOB.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Please fill out Date Of Birth!");
+            return;
+        }
+    }//GEN-LAST:event_btnSubmit2ActionPerformed
 
     private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed
         // TODO add your handling code here:
@@ -184,7 +206,7 @@ public class GUISignUp extends javax.swing.JFrame {
     private javax.swing.JTextField Email;
     private javax.swing.JTextField NameSignUp;
     private javax.swing.JTextField PhoneNo;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSubmit2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
