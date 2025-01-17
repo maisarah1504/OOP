@@ -127,6 +127,9 @@ public class GUILoanSystem extends javax.swing.JFrame {
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here
         //open JFrame 2(MenuInterface
+        JOptionPane.showInputDialog("Enter ID: ");
+        
+        
         GUISignUp jf3 = new GUISignUp ();
         jf3.show();  //display MenuInterface here
         

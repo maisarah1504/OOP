@@ -41,6 +41,7 @@ public class LoanApplication {
                         System.out.println("Maximum number of applicants reached.");
                         break;
                     }
+        
                     System.out.print("Enter ID: ");
                     String id = scanner.nextLine();
                     System.out.print("Enter Name: ");
@@ -136,4 +137,5 @@ public class LoanApplication {
         }
         return null;
     }
+    
 }
