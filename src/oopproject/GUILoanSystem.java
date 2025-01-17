@@ -139,6 +139,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
+        JOptionPane.showInputDialog("Enter ID: ");
         GUIAddLoan jf1 = new GUIAddLoan ();
         jf1.show();  //display MenuInterface here
         
@@ -148,6 +149,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
+        JOptionPane.showInputDialog("Enter ID: ");
         GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus ();
         jf2.show();  //display MenuInterface here
         
