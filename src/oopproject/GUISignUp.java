@@ -150,6 +150,8 @@ public class GUISignUp extends javax.swing.JFrame {
 
     private void btnSubmit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmit2ActionPerformed
         // TODO add your handling code here:
+        
+        
         if (NameSignUp.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Name!");
             return;
@@ -173,30 +175,12 @@ public class GUISignUp extends javax.swing.JFrame {
         else 
             JOptionPane.showMessageDialog(null, "Applicant Registered Successfully!");
             
+            GUILoanSystem jf0 = new GUILoanSystem ();
+            jf0.show();
+            
+            dispose ();
         
-            String msg = NameSignUp.getText();
-            new GUIViewApplicantStatus(msg).setVisible(true);
-            setVisible(false);
-            
-            String msg2 = Email.getText();
-            new GUIViewApplicantStatus(msg2).setVisible(true);
-            setVisible(false);
-            
-            String msg3 = PhoneNo.getText();
-            new GUIViewApplicantStatus(msg3).setVisible(true);
-            setVisible(false);
-            
-            String msg4 = Address1.getText();
-            new GUIViewApplicantStatus(msg4).setVisible(true);
-            setVisible(false);
-            
-            String msg5 = Address2.getText();
-            new GUIViewApplicantStatus(msg5).setVisible(true);
-            setVisible(false);
-            
-            String msg6 = DOB.getText();
-            new GUIViewApplicantStatus(msg6).setVisible(true);
-            setVisible(false);
+
     }//GEN-LAST:event_btnSubmit2ActionPerformed
 
     private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed

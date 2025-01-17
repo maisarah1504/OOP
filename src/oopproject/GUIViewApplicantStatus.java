@@ -18,12 +18,6 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
         initComponents();
     }
 
-    public GUIViewApplicantStatus(String msg) {
-        initComponents();
-        labelName.setText(msg);
-      
-    }
-
   
     /**
      * This method is called from within the constructor to initialize the form.
