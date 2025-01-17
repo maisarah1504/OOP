@@ -117,12 +117,12 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label3" min="-2" pref="279" max="-2" attributes="0"/>
-                                  <Component id="label2" min="-2" pref="279" max="-2" attributes="0"/>
-                                  <Component id="label1" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                  <Component id="label4" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                  <Component id="label6" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                  <Component id="label5" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="labelEmail" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="labelName" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="labelPhoneNo" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="labelAddress1" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="labelAddress2" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
+                                  <Component id="labelDOB" min="-2" pref="279" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -153,29 +153,29 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label2" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelName" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="label3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelEmail" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelPhoneNo" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label4" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAddress1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="label6" min="-2" max="-2" attributes="0"/>
+              <Component id="labelAddress2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="label5" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelDOB" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
@@ -221,7 +221,6 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -346,32 +345,32 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.Label" name="label1">
+    <Component class="java.awt.Label" name="labelPhoneNo">
       <Properties>
         <Property name="text" type="java.lang.String" value="011-16652588"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label2">
+    <Component class="java.awt.Label" name="labelName">
       <Properties>
         <Property name="text" type="java.lang.String" value="Arfan Bin Ismail"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label3">
+    <Component class="java.awt.Label" name="labelEmail">
       <Properties>
         <Property name="text" type="java.lang.String" value="arfan27@gmail.com"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label4">
+    <Component class="java.awt.Label" name="labelAddress1">
       <Properties>
         <Property name="text" type="java.lang.String" value="No. 3, Jalan Hati, Taman Cekal,"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label5">
+    <Component class="java.awt.Label" name="labelDOB">
       <Properties>
         <Property name="text" type="java.lang.String" value="27 January 2000"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label6">
+    <Component class="java.awt.Label" name="labelAddress2">
       <Properties>
         <Property name="text" type="java.lang.String" value="45000, Shah Alam, Selangor."/>
       </Properties>
@@ -400,9 +399,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="RM651.10"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="RM651.10"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>
@@ -433,17 +429,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="P002"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="P002"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="java.awt.Label" name="label13">
       <Properties>
         <Property name="text" type="java.lang.String" value="RM10000.00"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="RM10000.00"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="java.awt.Label" name="label14">
       <Properties>
@@ -462,9 +452,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="RM167.09"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="RM167.09"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel19">
       <Properties>

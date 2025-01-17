@@ -18,6 +18,13 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
         initComponents();
     }
 
+    public GUIViewApplicantStatus(String msg) {
+        initComponents();
+        labelName.setText(msg);
+      
+    }
+
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,12 +51,12 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        label1 = new java.awt.Label();
-        label2 = new java.awt.Label();
-        label3 = new java.awt.Label();
-        label4 = new java.awt.Label();
-        label5 = new java.awt.Label();
-        label6 = new java.awt.Label();
+        labelPhoneNo = new java.awt.Label();
+        labelName = new java.awt.Label();
+        labelEmail = new java.awt.Label();
+        labelAddress1 = new java.awt.Label();
+        labelDOB = new java.awt.Label();
+        labelAddress2 = new java.awt.Label();
         label7 = new java.awt.Label();
         label8 = new java.awt.Label();
         label9 = new java.awt.Label();
@@ -117,17 +124,17 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
             }
         });
 
-        label1.setText("011-16652588");
+        labelPhoneNo.setText("011-16652588");
 
-        label2.setText("Arfan Bin Ismail");
+        labelName.setText("Arfan Bin Ismail");
 
-        label3.setText("arfan27@gmail.com");
+        labelEmail.setText("arfan27@gmail.com");
 
-        label4.setText("No. 3, Jalan Hati, Taman Cekal,");
+        labelAddress1.setText("No. 3, Jalan Hati, Taman Cekal,");
 
-        label5.setText("27 January 2000");
+        labelDOB.setText("27 January 2000");
 
-        label6.setText("45000, Shah Alam, Selangor.");
+        labelAddress2.setText("45000, Shah Alam, Selangor.");
 
         label7.setText("V001");
 
@@ -245,12 +252,12 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(266, 266, 266)
                                 .addComponent(jLabel1))
@@ -271,25 +278,25 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(46, 46, 46)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,8 +332,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                                         .addComponent(jLabel20))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(7, 7, 7)
-                                        .addComponent(jLabel15)
-                                        .addGap(3, 3, 3)))
+                                        .addComponent(jLabel15)))
                                 .addGap(13, 13, 13)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -361,11 +367,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        label11.getAccessibleContext().setAccessibleName("RM651.10");
-        label12.getAccessibleContext().setAccessibleName("P002");
-        label13.getAccessibleContext().setAccessibleName("RM10000.00");
         label14.getAccessibleContext().setAccessibleName("60 months");
-        label16.getAccessibleContext().setAccessibleName("RM167.09");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -441,7 +443,6 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
-    private java.awt.Label label1;
     private java.awt.Label label10;
     private java.awt.Label label11;
     private java.awt.Label label12;
@@ -452,15 +453,16 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     private java.awt.Label label17;
     private java.awt.Label label18;
     private java.awt.Label label19;
-    private java.awt.Label label2;
     private java.awt.Label label20;
     private java.awt.Label label21;
-    private java.awt.Label label3;
-    private java.awt.Label label4;
-    private java.awt.Label label5;
-    private java.awt.Label label6;
     private java.awt.Label label7;
     private java.awt.Label label8;
     private java.awt.Label label9;
+    private java.awt.Label labelAddress1;
+    private java.awt.Label labelAddress2;
+    private java.awt.Label labelDOB;
+    private java.awt.Label labelEmail;
+    private java.awt.Label labelName;
+    private java.awt.Label labelPhoneNo;
     // End of variables declaration//GEN-END:variables
 }
