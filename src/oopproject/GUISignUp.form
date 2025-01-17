@@ -33,13 +33,13 @@
                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Address1" min="-2" pref="292" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="Address1" pref="292" max="32767" attributes="0"/>
                   <Component id="NameSignUp" min="-2" pref="249" max="-2" attributes="0"/>
-                  <Component id="Address2" alignment="0" min="-2" pref="256" max="-2" attributes="0"/>
                   <Component id="DOB" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                   <Component id="PhoneNo" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                   <Component id="Email" min="-2" pref="249" max="-2" attributes="0"/>
+                  <Component id="Address2" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="180" max="32767" attributes="0"/>
           </Group>
