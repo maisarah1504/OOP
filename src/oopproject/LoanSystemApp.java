@@ -17,6 +17,8 @@ public class LoanSystemApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        GUILoanSystem loanSystem = new GUILoanSystem ();
+        loanSystem.setVisible(true);
         LoanApplication loanApplication = new LoanApplication();
         loanApplication.run();
         }
