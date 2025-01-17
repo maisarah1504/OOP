@@ -154,7 +154,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
 
         label13.setText("RM10000.00");
 
-        label14.setText("108 months");
+        label14.setText("60 months");
 
         label15.setText("10.00%");
 
