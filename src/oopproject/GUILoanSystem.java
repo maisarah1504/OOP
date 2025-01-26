@@ -23,8 +23,8 @@ public class GUILoanSystem extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnSignUp = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAddLoan = new javax.swing.JButton();
+        btnViewStatus = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,17 +42,17 @@ public class GUILoanSystem extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Add Loan");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAddLoan.setText("Add Loan");
+        btnAddLoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAddLoanActionPerformed(evt);
             }
         });
 
-        jButton3.setText("View Applicant Status");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnViewStatus.setText("View Applicant Status");
+        btnViewStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnViewStatusActionPerformed(evt);
             }
         });
 
@@ -75,12 +75,12 @@ public class GUILoanSystem extends javax.swing.JFrame {
                         .addGap(172, 172, 172))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
+                            .addComponent(btnAddLoan)
                             .addComponent(btnSignUp)
                             .addComponent(jLabel2))
                         .addGap(271, 271, 271))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(btnViewStatus)
                         .addGap(231, 231, 231))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(btnExit)
@@ -96,9 +96,9 @@ public class GUILoanSystem extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(btnSignUp)
                 .addGap(41, 41, 41)
-                .addComponent(jButton2)
+                .addComponent(btnAddLoan)
                 .addGap(42, 42, 42)
-                .addComponent(jButton3)
+                .addComponent(btnViewStatus)
                 .addGap(34, 34, 34)
                 .addComponent(btnExit)
                 .addContainerGap(56, Short.MAX_VALUE))
@@ -136,7 +136,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
         dispose(); // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_btnSignUpActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAddLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLoanActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
         JOptionPane.showInputDialog("Enter ID: ");
@@ -144,9 +144,9 @@ public class GUILoanSystem extends javax.swing.JFrame {
         jf1.show();  //display MenuInterface here
         
         dispose(); // close current frame(LoginInterface) after open MenuInterface
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnAddLoanActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnViewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatusActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
         JOptionPane.showInputDialog("Enter ID: ");
@@ -154,7 +154,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
         jf2.show();  //display MenuInterface here
         
         dispose(); // close current frame(LoginInterface) after open MenuInterface
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnViewStatusActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
@@ -174,10 +174,10 @@ public class GUILoanSystem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddLoan;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSignUp;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnViewStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

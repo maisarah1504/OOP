@@ -14,11 +14,38 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     /**
      * Creates new form GUIViewApplicantStatus
      */
-    public GUIViewApplicantStatus() {
+    public GUIViewApplicantStatus(){
         initComponents();
     }
+    
+    public GUIViewApplicantStatus(String name, String email, String PhoneNo, String Address1, String Address2, String DOB) {
+        initComponents();
+        labelName.setText(name);
+        labelEmail.setText(email);
+        labelPhoneNo.setText(PhoneNo);
+        labelAddress1.setText(Address1);
+        labelAddress2.setText(Address2);
+        labelDOB.setText(DOB);
+    }
 
+    public GUIViewApplicantStatus(String amountVehicle, String loanTermVehicle) {
+        initComponents();
+        label8.setText(amountVehicle);
+        label9.setText(loanTermVehicle);
+    }
   
+    public GUIViewApplicantStatus(String amountPersonal, String loanTermPersonal, String abc) {
+        initComponents();
+        label13.setText(amountPersonal);
+        label14.setText(loanTermPersonal);
+    }
+    
+    public GUIViewApplicantStatus(String amountStudy, String loanTermStudy, String abc, String bcd) {
+        initComponents();
+        label18.setText(amountStudy);
+        label19.setText(loanTermStudy);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,23 +145,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
             }
         });
 
-        labelPhoneNo.setText("011-16652588");
-
-        labelName.setText("Arfan Bin Ismail");
-
-        labelEmail.setText("arfan27@gmail.com");
-
-        labelAddress1.setText("No. 3, Jalan Hati, Taman Cekal,");
-
-        labelDOB.setText("27 January 2000");
-
-        labelAddress2.setText("45000, Shah Alam, Selangor.");
-
         label7.setText("V001");
-
-        label8.setText("RM70000.00");
-
-        label9.setText("108 months");
 
         label10.setText("10.00%");
 
@@ -152,10 +163,6 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
 
         label12.setText("P002");
 
-        label13.setText("RM10000.00");
-
-        label14.setText("60 months");
-
         label15.setText("10.00%");
 
         label16.setText("RM167.09");
@@ -171,10 +178,6 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
         jLabel23.setText("Monthly Rate:");
 
         label17.setText("S003");
-
-        label18.setText("RM40000.00");
-
-        label19.setText("60 months");
 
         label20.setText("10.00%");
 
@@ -360,8 +363,6 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addContainerGap(47, Short.MAX_VALUE))
         );
-
-        label14.getAccessibleContext().setAccessibleName("60 months");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

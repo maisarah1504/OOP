@@ -166,12 +166,16 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Loan Purpose");
             return;
         }
-        else 
+        else {
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
-            GUILoanSystem jf2 = new GUILoanSystem ();
-            jf2.show();
+        }
+        GUIViewApplicantStatus viewApplicantPersonal = new GUIViewApplicantStatus (AmountPersonalLoan.getText(),LoanTermPersonal.getText());
+        viewApplicantPersonal.setVisible(true);
+        
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show();
             
-            dispose ();
+        dispose ();
     }//GEN-LAST:event_btnSubmit1ActionPerformed
 
     private void btnBack2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack2ActionPerformed

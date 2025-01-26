@@ -172,19 +172,21 @@ public class GUISignUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Date Of Birth!");
             return;
         }
-        else 
+        else { 
             JOptionPane.showMessageDialog(null, "Applicant Registered Successfully!");
-            
-            GUILoanSystem jf0 = new GUILoanSystem ();
-            jf0.show();
-            
-            dispose ();
+        }    
         
+        GUILoanSystem jf0 = new GUILoanSystem ();
+        jf0.show();
+        dispose();
 
+        GUIViewApplicantStatus viewApplicant = new GUIViewApplicantStatus (NameSignUp.getText(), Email.getText(), PhoneNo.getText(), Address1.getText(), Address2.getText(), DOB.getText());
+        viewApplicant.setVisible(true);
     }//GEN-LAST:event_btnSubmit2ActionPerformed
 
     private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_PhoneNoActionPerformed
 
     private void btnBack3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack3ActionPerformed

@@ -194,12 +194,16 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Program Of Study!");
             return;
         }
-        else 
+        else {
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
-            GUILoanSystem jf2 = new GUILoanSystem ();
-            jf2.show();
+        }
+        GUIViewApplicantStatus viewApplicantStudy= new GUIViewApplicantStatus (AmountStudyLoan.getText(),LoanTermStudyLoan.getText());
+        viewApplicantStudy.setVisible(true);
+        
+        GUILoanSystem jf2 = new GUILoanSystem ();
+        jf2.show();
             
-            dispose ();
+        dispose ();
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed
 

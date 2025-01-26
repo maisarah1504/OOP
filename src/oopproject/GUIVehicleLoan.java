@@ -54,6 +54,12 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
 
         jLabel5.setText("Vehicle Model:");
 
+        AmountVehicleLoan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AmountVehicleLoanActionPerformed(evt);
+            }
+        });
+
         btnSubmit4.setText("Submit");
         btnSubmit4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,12 +156,14 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Vehicle Model!");
             return;
         }
-        else
+        else{
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
-            GUILoanSystem jf2 = new GUILoanSystem ();
-            jf2.show ();
-            
-            dispose();
+        }
+        
+        GUIViewApplicantStatus viewApplicantVehicle= new GUIViewApplicantStatus (AmountVehicleLoan.getText(),VehicleLoanTerm.getText());
+        viewApplicantVehicle.setVisible(true);
+          
+        dispose();
     }//GEN-LAST:event_btnSubmit4ActionPerformed
 
     private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
@@ -165,6 +173,10 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
         
         dispose();
     }//GEN-LAST:event_btnBack4ActionPerformed
+
+    private void AmountVehicleLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AmountVehicleLoanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AmountVehicleLoanActionPerformed
 
     /**
      * @param args the command line arguments

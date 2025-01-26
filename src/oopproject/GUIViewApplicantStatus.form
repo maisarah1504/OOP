@@ -346,34 +346,16 @@
       </Events>
     </Component>
     <Component class="java.awt.Label" name="labelPhoneNo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="011-16652588"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="labelName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Arfan Bin Ismail"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="labelEmail">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="arfan27@gmail.com"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="labelAddress1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="No. 3, Jalan Hati, Taman Cekal,"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="labelDOB">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="27 January 2000"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="labelAddress2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="45000, Shah Alam, Selangor."/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label7">
       <Properties>
@@ -381,14 +363,8 @@
       </Properties>
     </Component>
     <Component class="java.awt.Label" name="label8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="RM70000.00"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="108 months"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label10">
       <Properties>
@@ -431,17 +407,8 @@
       </Properties>
     </Component>
     <Component class="java.awt.Label" name="label13">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="RM10000.00"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label14">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="60 months"/>
-      </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="60 months"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="java.awt.Label" name="label15">
       <Properties>
@@ -484,14 +451,8 @@
       </Properties>
     </Component>
     <Component class="java.awt.Label" name="label18">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="RM40000.00"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label19">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="60 months"/>
-      </Properties>
     </Component>
     <Component class="java.awt.Label" name="label20">
       <Properties>
