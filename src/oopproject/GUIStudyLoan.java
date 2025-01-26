@@ -12,11 +12,12 @@ import javax.swing.JOptionPane;
  * @author ainna
  */
 public class GUIStudyLoan extends javax.swing.JFrame {
-
+    private static String enteredID; 
     /**
      * Creates new form GUIStudyLoan
      */
-    public GUIStudyLoan() {
+    public GUIStudyLoan(String enteredID) {
+        this.enteredID = enteredID; 
         initComponents();
     }
 
@@ -204,26 +205,23 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             
             //add loan to applicant
             LoanApplication loanApp = LoanApplication.getInstance();
-            Applicant applicant = loanApp.findApplicantById("ID1");
+            Applicant applicant = loanApp.findApplicantById(enteredID);
                 if (applicant != null){
                     applicant.addLoan(studyLoan);
                 }
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
         }
         
-        GUIViewApplicantStatus viewApplicantStudy= new GUIViewApplicantStatus ();
-        viewApplicantStudy.setVisible(true);
-        
-        /*GUILoanSystem jf2 = new GUILoanSystem ();
+        GUILoanSystem jf2 = new GUILoanSystem ();
         jf2.show();
-        */    
+        
         dispose ();
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed
 
     private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
         // TODO add your handling code here:
-        GUIAddLoan jf3 = new GUIAddLoan ();
+        GUIAddLoan jf3 = new GUIAddLoan (enteredID);
         jf3.show(); 
         
         dispose();
@@ -259,7 +257,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIStudyLoan().setVisible(true);
+                new GUIStudyLoan(enteredID).setVisible(true);
             }
         });
     }

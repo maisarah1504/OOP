@@ -11,6 +11,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
     private static final int MAX_APPLICANTS = 1000; // Maximum number of applicants
     private Applicant[] applicants;
     private int applicantCount;
+    private static String enteredID; 
     
     public GUILoanSystem() {
         initComponents();
@@ -154,13 +155,13 @@ public class GUILoanSystem extends javax.swing.JFrame {
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
         //user enter id
-        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+        enteredID = JOptionPane.showInputDialog("Enter ID: ");
         /*LoanApplication loanApp = LoanApplication.getInstance();
         Applicant applicant = loanApp.searchApplicantById(enteredID);
         
         if (applicant != null ) { */
                 //applicant found
-                GUIAddLoan jf1 = new GUIAddLoan ();
+                GUIAddLoan jf1 = new GUIAddLoan (enteredID);
                 jf1.show();  //display MenuInterface here
         
                 dispose(); // close current frame(LoginInterface) after open MenuInterface

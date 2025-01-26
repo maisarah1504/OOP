@@ -10,14 +10,18 @@ package oopproject;
  * @author ainna
  */
 public class GUIAddLoan extends javax.swing.JFrame {
-
+    
+    private static String enteredID; 
     /**
      * Creates new form GUIUserDashboard
      */
-    public GUIAddLoan() {
+    public GUIAddLoan(String enteredID) {
+        this.enteredID = enteredID;
         initComponents();
     }
-
+    public GUIAddLoan(){
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,7 +131,7 @@ public class GUIAddLoan extends javax.swing.JFrame {
 
     private void ButtonVehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVehicleActionPerformed
         // TODO add your handling code here:
-        GUIVehicleLoan jf4 = new GUIVehicleLoan ();
+        GUIVehicleLoan jf4 = new GUIVehicleLoan (enteredID);
         jf4.show(); 
         
         dispose(); // close current frame(LoginInterface) after open MenuInterface
@@ -136,7 +140,7 @@ public class GUIAddLoan extends javax.swing.JFrame {
     private void ButtonPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPersonalActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
-        GUIPersonalLoan jf5 = new GUIPersonalLoan ();
+        GUIPersonalLoan jf5 = new GUIPersonalLoan (enteredID);
         jf5.show();  //display MenuInterface here
         
         dispose(); // close current frame(LoginInterface) after open MenuInterface
@@ -145,7 +149,7 @@ public class GUIAddLoan extends javax.swing.JFrame {
     private void ButtonStudyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonStudyActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
-        GUIStudyLoan jf6 = new GUIStudyLoan ();
+        GUIStudyLoan jf6 = new GUIStudyLoan (enteredID);
         jf6.show();  //display MenuInterface here
         
         dispose(); // close current frame(LoginInterface) after open MenuInterface
@@ -190,7 +194,7 @@ public class GUIAddLoan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIAddLoan().setVisible(true);
+                new GUIAddLoan(enteredID).setVisible(true);
             }
         });
     }
