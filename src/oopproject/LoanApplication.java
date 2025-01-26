@@ -22,7 +22,7 @@ public class LoanApplication {
         this.applicantCount = 0;
     }
 
-    /************************************************
+    
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
@@ -140,9 +140,8 @@ public class LoanApplication {
         }
         return null;
     }
-     * @return 
-    *///////////////////////////////////////////////////////////////////////////////////
-
+    
+    
     public static LoanApplication getInstance() {
         if (instance == null) {
             instance = new LoanApplication();
