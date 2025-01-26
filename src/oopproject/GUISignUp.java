@@ -13,13 +13,12 @@ import javax.swing.JOptionPane;
  */
 public class GUISignUp extends javax.swing.JFrame {
 
-    /**
-     * Creates new form GUISignUp
-     */
-    public GUISignUp() {
+    private LoanApplication loanApp; 
+    
+    public GUISignUp(LoanApplication loanApp) {
+        this.loanApp = loanApp;
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -227,7 +226,7 @@ public class GUISignUp extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUISignUp().setVisible(true);
+                /*new GUISignUp().setVisible(true); */
             }
         });
     }

@@ -8,12 +8,23 @@ import javax.swing.JOptionPane;
 
 
 public class GUILoanSystem extends javax.swing.JFrame {
-
+    private static final int MAX_APPLICANTS = 1000; // Maximum number of applicants
+    private Applicant[] applicants;
+    private int applicantCount;
     
     public GUILoanSystem() {
         initComponents();
+        LoanSystemApp main = new LoanSystemApp();
     }
 
+    private Applicant findApplicantById(String id) {
+        for (int i = 0; i < applicantCount; i++) {
+            if (applicants[i].getId().equals(id)) {
+                return applicants[i];
+            }
+        }
+        return null;
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -125,25 +136,35 @@ public class GUILoanSystem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
-        // TODO add your handling code here
-        //open JFrame 2(MenuInterface
-        JOptionPane.showInputDialog("Enter ID: ");
+        //user enter id
+        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+        LoanApplication loanApp = LoanApplication.getInstance();
+        Applicant applicant = loanApp.searchApplicantById(enteredID);
         
-        
-        GUISignUp jf3 = new GUISignUp ();
+        GUISignUp jf3 = new GUISignUp (loanApp);
         jf3.show();  //display MenuInterface here
-        
         dispose(); // close current frame(LoginInterface) after open MenuInterface
+         
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void btnAddLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLoanActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
-        JOptionPane.showInputDialog("Enter ID: ");
-        GUIAddLoan jf1 = new GUIAddLoan ();
-        jf1.show();  //display MenuInterface here
+        //user enter id
+        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+        /*LoanApplication loanApp = LoanApplication.getInstance();
+        Applicant applicant = loanApp.searchApplicantById(enteredID);
         
-        dispose(); // close current frame(LoginInterface) after open MenuInterface
+        if (applicant != null ) { */
+                //applicant found
+                GUIAddLoan jf1 = new GUIAddLoan ();
+                jf1.show();  //display MenuInterface here
+        
+                dispose(); // close current frame(LoginInterface) after open MenuInterface
+        /*}
+        else {
+            JOptionPane.showMessageDialog(this, "Applicant ID not found. Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        } */  
     }//GEN-LAST:event_btnAddLoanActionPerformed
 
     private void btnViewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatusActionPerformed

@@ -13,14 +13,16 @@ import java.util.Scanner;
 
 public class LoanApplication {
     private static final int MAX_APPLICANTS = 1000; // Maximum number of applicants
+    private static LoanApplication instance;
     private Applicant[] applicants;
     private int applicantCount;
 
-    public LoanApplication() {
+    LoanApplication() {
         this.applicants = new Applicant[MAX_APPLICANTS];
         this.applicantCount = 0;
     }
 
+    /************************************************
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
@@ -128,6 +130,7 @@ public class LoanApplication {
             }
         }
     }
+ 
 
     private Applicant findApplicantById(String id) {
         for (int i = 0; i < applicantCount; i++) {
@@ -137,5 +140,29 @@ public class LoanApplication {
         }
         return null;
     }
+     * @return 
+    *///////////////////////////////////////////////////////////////////////////////////
+
+    public static LoanApplication getInstance() {
+        if (instance == null) {
+            instance = new LoanApplication();
+        }
+        return instance;
+    }
     
+    public void addApplicant(Applicant applicant) {
+        if (applicantCount < MAX_APPLICANTS) {
+            applicants[applicantCount++] = applicant;
+        }
+    }
+
+    public Applicant searchApplicantById(String id) {
+        for (int i = 0; i < applicantCount; i++) {
+            if (applicants[i].getId().equals(id)) {
+                return applicants[i];
+            }
+        }
+        return null;
+    }
 }
+
