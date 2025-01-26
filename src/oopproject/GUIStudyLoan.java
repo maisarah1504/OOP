@@ -195,14 +195,28 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             return;
         }
         else {
+            double amount = Double.parseDouble(AmountStudyLoan.getText());
+            int loanTerm = Integer.parseInt(LoanTermStudyLoan.getText());
+            String university = UniName.getText();
+            String program = ProgramOfStudy.getText();
+            
+            Loan studyLoan = LoanFactory.createLoan("study", amount, loanTerm, university, program);
+            
+            //add loan to applicant
+            LoanApplication loanApp = LoanApplication.getInstance();
+            Applicant applicant = loanApp.searchApplicantById("ID1");
+                if (applicant != null){
+                    applicant.addLoan(studyLoan);
+                }
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
         }
-        GUIViewApplicantStatus viewApplicantStudy= new GUIViewApplicantStatus (AmountStudyLoan.getText(),LoanTermStudyLoan.getText());
+        
+        GUIViewApplicantStatus viewApplicantStudy= new GUIViewApplicantStatus ();
         viewApplicantStudy.setVisible(true);
         
-        GUILoanSystem jf2 = new GUILoanSystem ();
+        /*GUILoanSystem jf2 = new GUILoanSystem ();
         jf2.show();
-            
+        */    
         dispose ();
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed

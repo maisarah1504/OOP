@@ -172,6 +172,20 @@ public class GUISignUp extends javax.swing.JFrame {
             return;
         }
         else { 
+            //create new applicant
+            Applicant applicant = new Applicant(
+                "ID1",
+                NameSignUp.getText(),
+                Email.getText(),
+                PhoneNo.getText(),
+                Address1.getText(),
+                DOB.getText()
+            );
+            
+            //Add applicant to loanapplicant 
+            LoanApplication loanApp = LoanApplication.getInstance();
+            loanApp.addApplicant(applicant);
+            
             JOptionPane.showMessageDialog(null, "Applicant Registered Successfully!");
         }    
         
@@ -179,8 +193,8 @@ public class GUISignUp extends javax.swing.JFrame {
         jf0.show();
         dispose();
 
-        GUIViewApplicantStatus viewApplicant = new GUIViewApplicantStatus (NameSignUp.getText(), Email.getText(), PhoneNo.getText(), Address1.getText(), Address2.getText(), DOB.getText());
-        viewApplicant.setVisible(true);
+        /**GUIViewApplicantStatus viewApplicant = new GUIViewApplicantStatus ();
+        viewApplicant.setVisible(true); */
     }//GEN-LAST:event_btnSubmit2ActionPerformed
 
     private void PhoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNoActionPerformed

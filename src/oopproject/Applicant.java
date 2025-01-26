@@ -42,7 +42,11 @@ public class Applicant {
             System.out.println("Cannot add more loans. Maximum limit reached.");
         }
     }
-
+    
+    public Loan[] getLoans(){
+        return loans;
+    }
+    
     // Display applicant details
     public void displayDetails() {
         System.out.println("Applicant ID: " + id);

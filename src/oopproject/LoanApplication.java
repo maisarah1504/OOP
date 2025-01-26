@@ -153,6 +153,9 @@ public class LoanApplication {
         if (applicantCount < MAX_APPLICANTS) {
             applicants[applicantCount++] = applicant;
         }
+        else{
+            System.out.println("Cannot add more applicant! Maximum limit reached.");
+        }
     }
 
     public Applicant searchApplicantById(String id) {

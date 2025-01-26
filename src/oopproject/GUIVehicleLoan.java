@@ -157,10 +157,25 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
             return;
         }
         else{
+            // Create a new VehicleLoan object
+            double amount = Double.parseDouble(AmountVehicleLoan.getText());
+            int loanTerm = Integer.parseInt(VehicleLoanTerm.getText());
+            String vehicleType = VehicleType.getText();
+            String vehicleModel = VehicleModel.getText();
+
+            Loan vehicleLoan = LoanFactory.createLoan("vehicle", amount, loanTerm, vehicleType, vehicleModel);
+
+            // Add the loan to the applicant
+            LoanApplication loanApp = LoanApplication.getInstance();
+            Applicant applicant = loanApp.searchApplicantById("ID1");
+            if (applicant != null) {
+                applicant.addLoan(vehicleLoan);
+            }    
+        
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
         }
         
-        GUIViewApplicantStatus viewApplicantVehicle= new GUIViewApplicantStatus (AmountVehicleLoan.getText(),VehicleLoanTerm.getText());
+        GUIViewApplicantStatus viewApplicantVehicle= new GUIViewApplicantStatus ();
         viewApplicantVehicle.setVisible(true);
           
         dispose();

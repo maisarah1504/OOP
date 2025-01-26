@@ -167,14 +167,28 @@ public class GUIPersonalLoan extends javax.swing.JFrame {
             return;
         }
         else {
+            //create new PersonalLoan object
+            double amount = Double.parseDouble(AmountPersonalLoan.getText());
+            int loanTerm = Integer.parseInt(LoanTermPersonal.getText());
+            String purpose = LoanPurpose.getText();
+
+            Loan personalLoan = LoanFactory.createLoan("personal", amount, loanTerm, purpose);
+
+            // Add the loan to the applicant
+            LoanApplication loanApp = LoanApplication.getInstance();
+            Applicant applicant = loanApp.searchApplicantById("ID1");
+            if (applicant != null) {
+            applicant.addLoan(personalLoan);
+            }
+
             JOptionPane.showMessageDialog(null, "Loan Submitted!");
         }
-        GUIViewApplicantStatus viewApplicantPersonal = new GUIViewApplicantStatus (AmountPersonalLoan.getText(),LoanTermPersonal.getText());
+        GUIViewApplicantStatus viewApplicantPersonal = new GUIViewApplicantStatus ();
         viewApplicantPersonal.setVisible(true);
         
-        GUILoanSystem jf2 = new GUILoanSystem ();
+        /*GUILoanSystem jf2 = new GUILoanSystem ();
         jf2.show();
-            
+        */    
         dispose ();
     }//GEN-LAST:event_btnSubmit1ActionPerformed
 

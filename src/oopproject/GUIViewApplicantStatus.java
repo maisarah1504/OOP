@@ -16,34 +16,40 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
      */
     public GUIViewApplicantStatus(){
         initComponents();
+        displayApplicantData();
     }
     
-    public GUIViewApplicantStatus(String name, String email, String PhoneNo, String Address1, String Address2, String DOB) {
-        initComponents();
-        labelName.setText(name);
-        labelEmail.setText(email);
-        labelPhoneNo.setText(PhoneNo);
-        labelAddress1.setText(Address1);
-        labelAddress2.setText(Address2);
-        labelDOB.setText(DOB);
-    }
-
-    public GUIViewApplicantStatus(String amountVehicle, String loanTermVehicle) {
-        initComponents();
-        label8.setText(amountVehicle);
-        label9.setText(loanTermVehicle);
-    }
-  
-    public GUIViewApplicantStatus(String amountPersonal, String loanTermPersonal, String abc) {
-        initComponents();
-        label13.setText(amountPersonal);
-        label14.setText(loanTermPersonal);
-    }
+    private void displayApplicantData(){
+        LoanApplication loanApp = LoanApplication.getInstance();
+        Applicant applicant = loanApp.searchApplicantById("ID1");
     
-    public GUIViewApplicantStatus(String amountStudy, String loanTermStudy, String abc, String bcd) {
-        initComponents();
-        label18.setText(amountStudy);
-        label19.setText(loanTermStudy);
+        if (applicant != null) {
+            labelName.setText(applicant.getName());
+            labelEmail.setText(applicant.getEmail());
+            labelPhoneNo.setText(applicant.getPhoneNum());
+            labelAddress1.setText(applicant.getAddress());
+            labelAddress2.setText(applicant.getDoB());
+            
+            // Display loans
+            Loan[] loans = applicant.getLoans();
+            for (Loan loan : loans) {
+            if (loan != null) {
+                // Display loan details based on loan type
+                if (loan instanceof PersonalLoan) {
+                    label13.setText(String.valueOf(loan.getAmount()));
+                    label14.setText(String.valueOf(loan.getLoanTerm()));
+                } 
+                else if (loan instanceof StudyLoan) {
+                    label18.setText(String.valueOf(loan.getAmount()));
+                    label19.setText(String.valueOf(loan.getLoanTerm()));
+                } 
+                else if (loan instanceof VehicleLoan) {
+                    label8.setText(String.valueOf(loan.getAmount()));
+                    label9.setText(String.valueOf(loan.getLoanTerm()));
+                }
+            }
+            }   
+        }
     }
     
     /**
