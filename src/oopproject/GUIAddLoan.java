@@ -20,6 +20,7 @@ public class GUIAddLoan extends javax.swing.JFrame {
         initComponents();
     }
     public GUIAddLoan(){
+        initComponents();
     }
     
     /**
