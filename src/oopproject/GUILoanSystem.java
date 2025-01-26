@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class GUILoanSystem extends javax.swing.JFrame {
     private static final int MAX_APPLICANTS = 1000; // Maximum number of applicants
-    private Applicant[] applicants;
+    private static Applicant[] applicants;
     private int applicantCount;
     
     public GUILoanSystem() {
