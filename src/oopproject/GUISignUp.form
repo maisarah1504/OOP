@@ -31,15 +31,16 @@
                   <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" pref="89" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel7" min="-2" pref="89" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="Address1" pref="292" max="32767" attributes="0"/>
-                  <Component id="NameSignUp" min="-2" pref="249" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="Address1" min="-2" pref="292" max="-2" attributes="0"/>
+                  <Component id="ID" min="-2" pref="249" max="-2" attributes="0"/>
                   <Component id="DOB" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                   <Component id="PhoneNo" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                   <Component id="Email" min="-2" pref="249" max="-2" attributes="0"/>
-                  <Component id="Address2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Name" min="-2" pref="249" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="180" max="32767" attributes="0"/>
           </Group>
@@ -64,8 +65,13 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NameSignUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Name" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -82,19 +88,17 @@
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Address1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="Address2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="DOB" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnSubmit2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBack3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -110,7 +114,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Name:"/>
+        <Property name="text" type="java.lang.String" value="Id: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -133,7 +137,7 @@
         <Property name="text" type="java.lang.String" value="Date Of Birth:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameSignUp">
+    <Component class="javax.swing.JTextField" name="ID">
     </Component>
     <Component class="javax.swing.JTextField" name="Email">
     </Component>
@@ -143,8 +147,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Address1">
-    </Component>
-    <Component class="javax.swing.JTextField" name="Address2">
     </Component>
     <Component class="javax.swing.JTextField" name="DOB">
     </Component>
@@ -163,6 +165,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBack3ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="Name">
     </Component>
   </SubComponents>
 </Form>

@@ -138,22 +138,16 @@ public class GUILoanSystem extends javax.swing.JFrame {
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         //user enter id
-        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
-        if (enteredID == null || enteredID.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "ID cannot be empty or null.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+//        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+//        if (enteredID == null || enteredID.trim().isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "ID cannot be empty or null.", "Error", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+        GUISignUp signUpWindow = new GUISignUp(); 
+        signUpWindow.setVisible(true); // Make the SignUp window visible
 
-        LoanApplication loanApp = LoanApplication.getInstance();
-        Applicant applicant = loanApp.searchApplicantById(enteredID);
-
-        if (applicant == null) {
-            JOptionPane.showMessageDialog(this, "Applicant not found. Please sign up as a new user.", "Info", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            GUISignUp jf3 = new GUISignUp(loanApp);
-            jf3.setVisible(true); 
-            this.dispose();
-        }     
+        // Optionally, close the current window if needed
+        dispose(); 
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void btnAddLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLoanActionPerformed
