@@ -172,12 +172,27 @@ public class GUILoanSystem extends javax.swing.JFrame {
 
     private void btnViewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatusActionPerformed
         // TODO add your handling code here:
-        //open JFrame 2(MenuInterface
+        
         String enteredID = JOptionPane.showInputDialog("Enter ID: ");
-        GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
+        LoanApplication loanApp = LoanApplication.getInstance();
+        Applicant applicant = loanApp.findApplicantById(enteredID);
+
+        if (applicant != null) {
+            GUIViewApplicantStatus viewStatus = new GUIViewApplicantStatus(enteredID);
+            viewStatus.setVisible(true);
+            dispose();
+            GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
+        jf2.show();
+        dispose();
+        } 
+        else {
+            JOptionPane.showMessageDialog(this, "Applicant not found. Please sign up as a new user.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+         
+        /*GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
         jf2.show();  //display MenuInterface here
         
-        dispose(); // close current frame(LoginInterface) after open MenuInterface
+        dispose();*/ // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_btnViewStatusActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
