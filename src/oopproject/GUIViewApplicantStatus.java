@@ -37,7 +37,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
             labelEmail.setText(applicant.getEmail());
             labelPhoneNo.setText(applicant.getPhoneNumber());
             labelAddress1.setText(applicant.getAddress());
-            labelAddress2.setText(applicant.getDob());
+            labelDOB.setText(applicant.getDob());
 
             // Display loan details
             Loan[] loans = applicant.getLoans();
