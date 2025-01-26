@@ -4,6 +4,8 @@
  */
 package oopproject;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author USER
@@ -33,7 +35,6 @@ public class Applicant {
         this.loans = new Loan[10]; // Maximum loans per applicant
         this.loanCount = 0;
     }
-
     // Add a loan to the applicant
     public void addLoan(Loan loan) {
         if (loanCount < loans.length) {

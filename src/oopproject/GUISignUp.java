@@ -180,18 +180,19 @@ public class GUISignUp extends javax.swing.JFrame {
         }
         
     // Create a new applicant using the passed applicantId
-        boolean isSuccess = Applicant.addApplicant(
-            ID.getText(),                    // Use the applicantId passed to this form
-            Name.getText(),
-            Email.getText(),
-            PhoneNo.getText(),
-            Address1.getText(),
-            DOB.getText()
-        );
+        String id = ID.getText();  // ID input from user
+        String name = Name.getText();  // Name input from user
+        String email = Email.getText();  // Email input from user
+        String phone = PhoneNo.getText();  // Phone input from user
+        String address = Address1.getText();  // Address input from user
+        String dob = DOB.getText();  // Date of Birth input from user
+        
+        Applicant newApplicant = new Applicant(ID, Name, Email, PhoneNo, Address1, DOB);
 
-        if (isSuccess){
-            JOptionPane.showMessageDialog(this, "Applicant Registered Successfully!");
-        }
+    // Add the new applicant to LoanApplication's list (make sure to save the applicant)
+        loanApp = LoanApplication.getInstance();
+        loanApp.addApplicant(newApplicant);  // This method should add the applicant to a list or array
+        
             // Navigate back to GUILoanSystem
         GUILoanSystem loanSystem = new GUILoanSystem();
         loanSystem.setVisible(true);
