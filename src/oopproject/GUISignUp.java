@@ -14,10 +14,14 @@ import javax.swing.JOptionPane;
 public class GUISignUp extends javax.swing.JFrame {
 
     private LoanApplication loanApp; 
+    private String applicant; 
     
-    public GUISignUp(LoanApplication loanApp) {
+    public GUISignUp(LoanApplication loanApp, String applicantId) {
         this.loanApp = loanApp;
+        this.applicantId = applicantId;
         initComponents();
+    }
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,43 +159,40 @@ public class GUISignUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill out Name!");
             return;
         }
-        else if (Email.getText().equals("")){
+        if (Email.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Email!");
             return;
         }
-        else if (PhoneNo.getText().equals("")){
+        if (PhoneNo.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Phone Number!");
             return;
         }
-        else if (Address1.getText().equals("")){
+        if (Address1.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Address!");
             return;
         }
-        else if (DOB.getText().equals("")){
+        if (DOB.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Please fill out Date Of Birth!");
             return;
         }
-        else { 
-            //create new applicant
-            Applicant applicant = new Applicant(
-                "ID1",
-                NameSignUp.getText(),
-                Email.getText(),
-                PhoneNo.getText(),
-                Address1.getText(),
-                DOB.getText()
-            );
-            
-            //Add applicant to loanapplicant 
-            LoanApplication loanApp = LoanApplication.getInstance();
-            loanApp.addApplicant(applicant);
-            
-            JOptionPane.showMessageDialog(null, "Applicant Registered Successfully!");
-        }    
         
-        GUILoanSystem jf0 = new GUILoanSystem ();
-        jf0.show();
-        dispose();
+    // Create a new applicant using the passed applicantId
+        boolean isSuccess = Applicant.addApplicant(
+            applicantId,                    // Use the applicantId passed to this form
+            NameSignUp.getText(),
+            Email.getText(),
+            PhoneNo.getText(),
+            Address1.getText() + " " + Address2.getText(),
+            DOB.getText()
+        );
+
+        if (isSuccess){
+            JOptionPane.showMessageDialog(this, "Applicant Registered Successfully!");
+        }
+            // Navigate back to GUILoanSystem
+        GUILoanSystem loanSystem = new GUILoanSystem();
+        loanSystem.setVisible(true);
+        dispose(); // Close the current form
 
         /**GUIViewApplicantStatus viewApplicant = new GUIViewApplicantStatus ();
         viewApplicant.setVisible(true); */

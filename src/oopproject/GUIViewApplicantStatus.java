@@ -5,6 +5,8 @@
  */
 package oopproject;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ainna
@@ -14,15 +16,26 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     /**
      * Creates new form GUIViewApplicantStatus
      */
-    public GUIViewApplicantStatus(){
+    public GUIViewApplicantStatus(String enteredID){
         initComponents();
-        displayApplicantData();
+        displayApplicantData(enteredID);
+    }
+
+    GUIViewApplicantStatus() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    private void displayApplicantData(){
+    private void displayApplicantData(String enteredID){
         LoanApplication loanApp = LoanApplication.getInstance();
-        Applicant applicant = loanApp.searchApplicantById("ID1");
-    
+        Applicant applicant = loanApp.searchApplicantById(enteredID);
+
+        if (applicant == null) {
+            JOptionPane.showMessageDialog(this, "Applicant not found. Please sign up as a new user.", "Info", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            GUISignUp jf3 = new GUISignUp(loanApp);
+            jf3.setVisible(true); 
+            this.dispose();
+        }     
         if (applicant != null) {
             labelName.setText(applicant.getName());
             labelEmail.setText(applicant.getEmail());

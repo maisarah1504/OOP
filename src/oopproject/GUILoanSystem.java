@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class GUILoanSystem extends javax.swing.JFrame {
     private static final int MAX_APPLICANTS = 1000; // Maximum number of applicants
-    private static Applicant[] applicants;
+    private Applicant[] applicants;
     private int applicantCount;
     
     public GUILoanSystem() {
@@ -135,16 +135,25 @@ public class GUILoanSystem extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         //user enter id
         String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+        if (enteredID == null || enteredID.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "ID cannot be empty or null.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         LoanApplication loanApp = LoanApplication.getInstance();
         Applicant applicant = loanApp.searchApplicantById(enteredID);
-        
-        GUISignUp jf3 = new GUISignUp (loanApp);
-        jf3.show();  //display MenuInterface here
-        dispose(); // close current frame(LoginInterface) after open MenuInterface
-         
+
+        if (applicant == null) {
+            JOptionPane.showMessageDialog(this, "Applicant not found. Please sign up as a new user.", "Info", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            GUISignUp jf3 = new GUISignUp(loanApp);
+            jf3.setVisible(true); 
+            this.dispose();
+        }     
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void btnAddLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLoanActionPerformed
@@ -170,8 +179,8 @@ public class GUILoanSystem extends javax.swing.JFrame {
     private void btnViewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatusActionPerformed
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
-        JOptionPane.showInputDialog("Enter ID: ");
-        GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus ();
+        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+        GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
         jf2.show();  //display MenuInterface here
         
         dispose(); // close current frame(LoginInterface) after open MenuInterface
