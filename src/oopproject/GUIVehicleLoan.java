@@ -11,13 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author ainna
  */
-public class GUIVehicleLoan extends javax.swing.JFrame {
-    
+public class GUIVehicleLoan extends javax.swing.JFrame {    
     private static String enteredID; 
+
     /**
      * Creates new form GUIVehicleLoan
      */
     public GUIVehicleLoan(String enteredID) {
+
         this.enteredID = enteredID; 
         initComponents();
     }
@@ -224,6 +225,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GUIVehicleLoan(enteredID).setVisible(true);
             }

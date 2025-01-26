@@ -45,7 +45,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                 if (loan != null) {
                     if (loan instanceof PersonalLoan) {
                         labelIDP.setText(String.valueOf(((PersonalLoan) loan).getLoanId()));
-                        labelAmountP.setText(String.valueOf(((PersonalLoan) loan).getAmount()));
+                        lableAmountP.setText(String.valueOf(((PersonalLoan) loan).getAmount()));
                         labelLoanTermP.setText(String.valueOf(loan.getLoanTerm()));
                         InterestRateP.setText(String.valueOf(loan.getInterestRate()));
                         labelMonthlyRateP.setText(String.valueOf(((PersonalLoan)loan).getMonthlyPayment())); 

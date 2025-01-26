@@ -173,7 +173,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
 
     private void btnViewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatusActionPerformed
         // TODO add your handling code here:
-        //open JFrame 2(MenuInterface
+        
         String enteredID = JOptionPane.showInputDialog("Enter ID: ");
         GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
         jf2.show();  //display MenuInterface here

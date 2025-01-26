@@ -20,7 +20,7 @@ public class LoanFactory {
             case "study":
                 return new StudyLoan(amount, loanTerm, details[0], details[1]);
             default:
-                throw new IllegalArgumentException("Invalid loan t  ype!");
+                throw new IllegalArgumentException("Invalid loan type!");
         }
     }
 }

@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class GUIStudyLoan extends javax.swing.JFrame {
     private static String enteredID; 
+
     /**
      * Creates new form GUIStudyLoan
      */
@@ -215,6 +216,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
         GUILoanSystem jf2 = new GUILoanSystem ();
         jf2.show();
         
+
         dispose ();
         
     }//GEN-LAST:event_btnSubmit3ActionPerformed
@@ -256,6 +258,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GUIStudyLoan(enteredID).setVisible(true);
             }
