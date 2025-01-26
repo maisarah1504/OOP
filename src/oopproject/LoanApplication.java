@@ -59,7 +59,7 @@ public class LoanApplication {
                     if (findApplicantById(id) != null) {
                         System.out.println("Applicant with this ID already exists!");
                     } else {
-                        applicants[applicantCount++] = new Applicant(id, name, email, phoneNum, address, doB);
+                        addApplicant(id, name, email, phoneNum, address, doB);
                         System.out.println("Applicant registered successfully!");
                     }
                     break;
@@ -145,6 +145,14 @@ public class LoanApplication {
             }
         }
         return null; // Return null if applicant not found
+    }
+    public void addApplicant(String id, String name, String email, String phoneNum, String address, String doB) {
+        if (applicantCount < MAX_APPLICANTS) {
+            applicants[applicantCount++] = new Applicant(id, name, email, phoneNum, address, doB);
+            System.out.println("Applicant registered successfully!");
+        } else {
+            System.out.println("Maximum number of applicants reached.");
+        }
     }
 }
 
