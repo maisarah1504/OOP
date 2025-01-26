@@ -13,10 +13,12 @@ import javax.swing.JOptionPane;
  */
 public class GUIVehicleLoan extends javax.swing.JFrame {
 
+    private static String enteredID;
     /**
      * Creates new form GUIVehicleLoan
      */
-    public GUIVehicleLoan() {
+    public GUIVehicleLoan(String enteredID) {
+        this.enteredID = enteredID;
         initComponents();
     }
 
@@ -167,7 +169,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
 
             // Add the loan to the applicant
             LoanApplication loanApp = LoanApplication.getInstance();
-            Applicant applicant = loanApp.findApplicantById("ID1");
+            Applicant applicant = loanApp.findApplicantById(enteredID);
             if (applicant != null) {
                 applicant.addLoan(vehicleLoan);
             }    
@@ -223,7 +225,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUIVehicleLoan().setVisible(true);
+                new GUIVehicleLoan(enteredID).setVisible(true);
             }
         });
     }

@@ -59,9 +59,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="labelLoanTermV" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
-                          <Component id="labelInterestRate" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                          <Component id="InterestRateS" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
                           <Component id="labelAmountV" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
-                          <Component id="labelLoanIDV" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
+                          <Component id="labelIDV" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
                           <Component id="labelMonthlyRateV" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -76,9 +76,9 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="labelLoanTermP" alignment="0" max="32767" attributes="0"/>
                           <Component id="lableAmountP" alignment="0" pref="120" max="32767" attributes="0"/>
-                          <Component id="labelLoanIDP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="labelIDP" alignment="0" max="32767" attributes="0"/>
                           <Component id="labelMonthlyRateP" max="32767" attributes="0"/>
-                          <Component id="label20" alignment="0" max="32767" attributes="0"/>
+                          <Component id="InterestRateP" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -90,9 +90,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelLoanIDS" pref="158" max="32767" attributes="0"/>
+                          <Component id="labelIDS" pref="158" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="label15" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="labelInterestRateV" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="labelMonthlyRateS" pref="158" max="32767" attributes="0"/>
@@ -182,10 +182,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="labelLoanIDP" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelIDP" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelLoanIDS" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelIDS" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -231,7 +231,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelLoanIDV" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelIDV" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
@@ -241,12 +241,12 @@
               </Group>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelInterestRate" min="-2" max="-2" attributes="0"/>
+                  <Component id="InterestRateS" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel17" min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="label20" min="-2" max="-2" attributes="0"/>
+                  <Component id="InterestRateP" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel22" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelInterestRateV" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -351,7 +351,7 @@
     </Component>
     <Component class="java.awt.Label" name="labelDOB">
     </Component>
-    <Component class="java.awt.Label" name="labelLoanIDV">
+    <Component class="java.awt.Label" name="labelIDV">
       <Properties>
         <Property name="text" type="java.lang.String" value="V001"/>
       </Properties>
@@ -360,7 +360,7 @@
     </Component>
     <Component class="java.awt.Label" name="labelLoanTermV">
     </Component>
-    <Component class="java.awt.Label" name="labelInterestRate">
+    <Component class="java.awt.Label" name="InterestRateS">
       <Properties>
         <Property name="text" type="java.lang.String" value="10.00%"/>
       </Properties>
@@ -395,7 +395,7 @@
         <Property name="text" type="java.lang.String" value="Monthly Rate:"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="labelLoanIDP">
+    <Component class="java.awt.Label" name="labelIDP">
       <Properties>
         <Property name="text" type="java.lang.String" value="P002"/>
       </Properties>
@@ -404,7 +404,7 @@
     </Component>
     <Component class="java.awt.Label" name="labelLoanTermP">
     </Component>
-    <Component class="java.awt.Label" name="label15">
+    <Component class="java.awt.Label" name="labelInterestRateV">
       <Properties>
         <Property name="text" type="java.lang.String" value="10.00%"/>
       </Properties>
@@ -439,7 +439,7 @@
         <Property name="text" type="java.lang.String" value="Monthly Rate:"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="labelLoanIDS">
+    <Component class="java.awt.Label" name="labelIDS">
       <Properties>
         <Property name="text" type="java.lang.String" value="S003"/>
       </Properties>
@@ -448,7 +448,7 @@
     </Component>
     <Component class="java.awt.Label" name="labelLoanTermS">
     </Component>
-    <Component class="java.awt.Label" name="label20">
+    <Component class="java.awt.Label" name="InterestRateP">
       <Properties>
         <Property name="text" type="java.lang.String" value="10.00%"/>
       </Properties>

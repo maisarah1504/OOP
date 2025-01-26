@@ -44,14 +44,23 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
             for (Loan loan : loans) {
                 if (loan != null) {
                     if (loan instanceof PersonalLoan) {
-                        lableAmountP.setText(String.valueOf(loan.getAmount()));
+                        labelIDP.setText(String.valueOf(((PersonalLoan) loan).getLoanId()));
+                        lableAmountP.setText(String.valueOf(((PersonalLoan) loan).getAmount()));
                         labelLoanTermP.setText(String.valueOf(loan.getLoanTerm()));
+                        InterestRateP.setText(String.valueOf(loan.getInterestRate()));
+                        labelMonthlyRateP.setText(String.valueOf(((PersonalLoan)loan).getMonthlyPayment())); 
                     } else if (loan instanceof StudyLoan) {
-                        labelAmountS.setText(String.valueOf(loan.getAmount()));
+                        labelIDS.setText(String.valueOf(((StudyLoan) loan).getLoanId()));
+                        labelAmountS.setText(String.valueOf(((StudyLoan) loan).getAmount()));
                         labelLoanTermS.setText(String.valueOf(loan.getLoanTerm()));
+                        InterestRateS.setText(String.valueOf(loan.getInterestRate()));
+                        labelMonthlyRateS.setText(String.valueOf(((StudyLoan)loan).getMonthlyPayment())); 
                     } else if (loan instanceof VehicleLoan) {
-                        labelAmountV.setText(String.valueOf(loan.getAmount()));
+                        labelIDV.setText(String.valueOf(((VehicleLoan) loan).getLoanId()));
+                        labelAmountV.setText(String.valueOf(((VehicleLoan) loan).getAmount()));
                         labelLoanTermV.setText(String.valueOf(loan.getLoanTerm()));
+                        labelInterestRateV.setText(String.valueOf(loan.getInterestRate()));
+                        labelMonthlyRateV.setText(String.valueOf(((VehicleLoan)loan).getMonthlyPayment())); 
                     }
                 }
             }
@@ -89,31 +98,30 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
         labelEmail = new java.awt.Label();
         labelAddress1 = new java.awt.Label();
         labelDOB = new java.awt.Label();
-        labelAddress2 = new java.awt.Label();
-        labelLoanIDV = new java.awt.Label();
+        labelIDV = new java.awt.Label();
         labelAmountV = new java.awt.Label();
         labelLoanTermV = new java.awt.Label();
-        labelInterestRate = new java.awt.Label();
+        InterestRateS = new java.awt.Label();
         labelMonthlyRateV = new java.awt.Label();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        labelLoanIDP = new java.awt.Label();
+        labelIDP = new java.awt.Label();
         lableAmountP = new java.awt.Label();
         labelLoanTermP = new java.awt.Label();
-        label15 = new java.awt.Label();
+        labelInterestRateV = new java.awt.Label();
         labelMonthlyRateP = new java.awt.Label();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        labelLoanIDS = new java.awt.Label();
+        labelIDS = new java.awt.Label();
         labelAmountS = new java.awt.Label();
         labelLoanTermS = new java.awt.Label();
-        label20 = new java.awt.Label();
+        InterestRateP = new java.awt.Label();
         labelMonthlyRateS = new java.awt.Label();
 
         jLabel2.setText("jLabel2");
@@ -157,9 +165,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
             }
         });
 
-        labelLoanIDV.setText("V001");
+        labelIDV.setText("V001");
 
-        labelInterestRate.setText("10.00%");
+        InterestRateS.setText("10.00%");
 
         labelMonthlyRateV.setText("RM651.10");
 
@@ -173,9 +181,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
 
         jLabel18.setText("Monthly Rate:");
 
-        labelLoanIDP.setText("P002");
+        labelIDP.setText("P002");
 
-        label15.setText("10.00%");
+        labelInterestRateV.setText("10.00%");
 
         labelMonthlyRateP.setText("RM167.09");
 
@@ -189,9 +197,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
 
         jLabel23.setText("Monthly Rate:");
 
-        labelLoanIDS.setText("S003");
+        labelIDS.setText("S003");
 
-        label20.setText("10.00%");
+        InterestRateP.setText("10.00%");
 
         labelMonthlyRateS.setText("RM668.36");
 
@@ -212,9 +220,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(labelLoanTermV, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(InterestRateS, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAmountV, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelLoanIDV, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelIDV, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelMonthlyRateV, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,9 +235,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(labelLoanTermP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lableAmountP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(labelLoanIDP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelIDP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(labelMonthlyRateP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(label20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(InterestRateP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,9 +247,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                             .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelLoanIDS, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                            .addComponent(labelIDS, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(labelInterestRateV, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(labelMonthlyRateS, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                             .addComponent(labelAmountS, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
@@ -265,7 +273,6 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                                     .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(labelPhoneNo, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(labelAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(266, 266, 266)
@@ -301,12 +308,10 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                .addComponent(labelDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -315,10 +320,10 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelLoanIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelLoanIDS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelIDS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -350,19 +355,19 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9)
-                            .addComponent(labelLoanIDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelIDV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel11)))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelInterestRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InterestRateS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InterestRateP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelInterestRateV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelMonthlyRateS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,7 +378,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
                     .addComponent(jLabel23))
                 .addGap(38, 38, 38)
                 .addComponent(jButton1)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -424,6 +429,8 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Label InterestRateP;
+    private java.awt.Label InterestRateS;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -451,18 +458,15 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextArea1;
-    private java.awt.Label label15;
-    private java.awt.Label label20;
     private java.awt.Label labelAddress1;
-    private java.awt.Label labelAddress2;
     private java.awt.Label labelAmountS;
     private java.awt.Label labelAmountV;
     private java.awt.Label labelDOB;
     private java.awt.Label labelEmail;
-    private java.awt.Label labelInterestRate;
-    private java.awt.Label labelLoanIDP;
-    private java.awt.Label labelLoanIDS;
-    private java.awt.Label labelLoanIDV;
+    private java.awt.Label labelIDP;
+    private java.awt.Label labelIDS;
+    private java.awt.Label labelIDV;
+    private java.awt.Label labelInterestRateV;
     private java.awt.Label labelLoanTermP;
     private java.awt.Label labelLoanTermS;
     private java.awt.Label labelLoanTermV;

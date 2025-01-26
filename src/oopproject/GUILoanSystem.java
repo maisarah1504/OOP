@@ -11,6 +11,7 @@ public class GUILoanSystem extends javax.swing.JFrame {
     private static final int MAX_APPLICANTS = 1000; // Maximum number of applicants
     private Applicant[] applicants;
     private int applicantCount;
+    private static String enteredID;
     
     public GUILoanSystem() {
         initComponents();
@@ -154,13 +155,13 @@ public class GUILoanSystem extends javax.swing.JFrame {
         // TODO add your handling code here:
         //open JFrame 2(MenuInterface
         //user enter id
-        String enteredID = JOptionPane.showInputDialog("Enter ID: ");
+        enteredID = JOptionPane.showInputDialog("Enter ID: ");
         /*LoanApplication loanApp = LoanApplication.getInstance();
         Applicant applicant = loanApp.searchApplicantById(enteredID);
         
         if (applicant != null ) { */
                 //applicant found
-                GUIAddLoan jf1 = new GUIAddLoan ();
+                GUIAddLoan jf1 = new GUIAddLoan (enteredID);
                 jf1.show();  //display MenuInterface here
         
                 dispose(); // close current frame(LoginInterface) after open MenuInterface
@@ -174,25 +175,10 @@ public class GUILoanSystem extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String enteredID = JOptionPane.showInputDialog("Enter ID: ");
-        LoanApplication loanApp = LoanApplication.getInstance();
-        Applicant applicant = loanApp.findApplicantById(enteredID);
-
-        if (applicant != null) {
-            GUIViewApplicantStatus viewStatus = new GUIViewApplicantStatus(enteredID);
-            viewStatus.setVisible(true);
-            dispose();
-            GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
-        jf2.show();
-        dispose();
-        } 
-        else {
-            JOptionPane.showMessageDialog(this, "Applicant not found. Please sign up as a new user.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-         
-        /*GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
+        GUIViewApplicantStatus jf2 = new GUIViewApplicantStatus (enteredID);
         jf2.show();  //display MenuInterface here
         
-        dispose();*/ // close current frame(LoginInterface) after open MenuInterface
+        dispose(); // close current frame(LoginInterface) after open MenuInterface
     }//GEN-LAST:event_btnViewStatusActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
