@@ -10,8 +10,8 @@ package oopproject;
  */
 
 public class Applicant {
-    private final int MAX_APPLICANTS = 100; // Maximum number of applicants
-    private Applicant[] applicants = new Applicant[MAX_APPLICANTS];
+    private static final int MAX_APPLICANTS = 100; // Maximum number of applicants
+    private static Applicant[] applicants = new Applicant[MAX_APPLICANTS];
     private static int applicantCount = 0; // Number of current applicants
 
     private String id;
