@@ -167,7 +167,7 @@ public class GUIVehicleLoan extends javax.swing.JFrame {
 
             // Add the loan to the applicant
             LoanApplication loanApp = LoanApplication.getInstance();
-            Applicant applicant = loanApp.searchApplicantById("ID1");
+            Applicant applicant = loanApp.findApplicantById("ID1");
             if (applicant != null) {
                 applicant.addLoan(vehicleLoan);
             }    

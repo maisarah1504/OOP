@@ -187,12 +187,11 @@ public class GUISignUp extends javax.swing.JFrame {
         String address = Address1.getText();  // Address input from user
         String dob = DOB.getText();  // Date of Birth input from user
         
-        Applicant newApplicant = new Applicant(ID, Name, Email, PhoneNo, Address1, DOB);
-
-    // Add the new applicant to LoanApplication's list (make sure to save the applicant)
-        loanApp = LoanApplication.getInstance();
-        loanApp.addApplicant(newApplicant);  // This method should add the applicant to a list or array
-        
+        Applicant newApplicant = new Applicant(id, name, email, phone, address, dob);
+    
+        // Get the LoanApplication instance and add the applicant to the list
+        LoanApplication loanApp = LoanApplication.getInstance();
+        loanApp.addApplicant(newApplicant);  // Ensure this method works properly
             // Navigate back to GUILoanSystem
         GUILoanSystem loanSystem = new GUILoanSystem();
         loanSystem.setVisible(true);

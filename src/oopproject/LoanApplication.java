@@ -22,7 +22,6 @@ public class LoanApplication {
         this.applicantCount = 0;
     }
 
-    
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
@@ -130,18 +129,7 @@ public class LoanApplication {
             }
         }
     }
- 
 
-    private Applicant findApplicantById(String id) {
-        for (int i = 0; i < applicantCount; i++) {
-            if (applicants[i].getId().equals(id)) {
-                return applicants[i];
-            }
-        }
-        return null;
-    }
-    
-    
     public static LoanApplication getInstance() {
         if (instance == null) {
             instance = new LoanApplication();
@@ -149,22 +137,15 @@ public class LoanApplication {
         return instance;
     }
     
-    public void addApplicant(Applicant applicant) {
-        if (applicantCount < MAX_APPLICANTS) {
-            applicants[applicantCount++] = applicant;
-        }
-        else{
-            System.out.println("Cannot add more applicant! Maximum limit reached.");
-        }
-    }
-
-    public Applicant searchApplicantById(String id) {
+    // Method to find an applicant by ID
+    public Applicant findApplicantById(String id) {
         for (int i = 0; i < applicantCount; i++) {
             if (applicants[i].getId().equals(id)) {
                 return applicants[i];
             }
         }
-        return null;
+        return null; // Return null if applicant not found
     }
 }
+
 

@@ -27,7 +27,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
     
     private void displayApplicantData(String enteredID){
         LoanApplication loanApp = LoanApplication.getInstance();
-        Applicant applicant = loanApp.searchApplicantById(enteredID);
+        Applicant applicant = loanApp.findApplicantById(enteredID);
 
         if (applicant == null) {
             JOptionPane.showMessageDialog(this, "Applicant not found. Please sign up as a new user.", "Info", JOptionPane.INFORMATION_MESSAGE);
@@ -35,9 +35,9 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
             // Fill in the applicant's information
             labelName.setText(applicant.getName());
             labelEmail.setText(applicant.getEmail());
-            labelPhoneNo.setText(applicant.getPhoneNum());
+            labelPhoneNo.setText(applicant.getPhoneNumber());
             labelAddress1.setText(applicant.getAddress());
-            labelAddress2.setText(applicant.getDoB());
+            labelAddress2.setText(applicant.getDob());
 
             // Display loan details
             Loan[] loans = applicant.getLoans();
@@ -416,6 +416,7 @@ public class GUIViewApplicantStatus extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new GUIViewApplicantStatus().setVisible(true);
             }

@@ -204,7 +204,7 @@ public class GUIStudyLoan extends javax.swing.JFrame {
             
             //add loan to applicant
             LoanApplication loanApp = LoanApplication.getInstance();
-            Applicant applicant = loanApp.searchApplicantById("ID1");
+            Applicant applicant = loanApp.findApplicantById("ID1");
                 if (applicant != null){
                     applicant.addLoan(studyLoan);
                 }
